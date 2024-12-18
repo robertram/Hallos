@@ -35,3 +35,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # hallos-test
+
+## Project Structure
+
+### Components
+
+components/
+├── common/         # Reusable components like buttons, inputs, etc.
+├── layout/         # Layout components like header, footer, sidebar
+├── forms/          # Form-related components
+└── ui/            # UI components like cards, modals, etc.
