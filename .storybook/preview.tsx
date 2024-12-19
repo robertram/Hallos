@@ -2,7 +2,6 @@ import React from 'react'
 import type { Preview } from "@storybook/react";
 import { Geist } from "next/font/google";
 import "../src/app/globals.css";
-// import withAppRouterContext from '../src/provider/withAppRouterContext'
 
 const geist = Geist({
   subsets: ["latin"],
@@ -26,7 +25,6 @@ const preview: Preview = {
       </main>
     )
   ]
-  // decorators: [withAppRouterContext],
 };
 
 export default preview;
