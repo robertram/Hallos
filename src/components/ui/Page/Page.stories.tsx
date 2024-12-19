@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { expect, userEvent, within } from '@storybook/test';
 
 import { Page } from './Page';
+// import { FontProvider } from "../../providers/FontProvider";
 
 const meta = {
   title: 'Example/Page',

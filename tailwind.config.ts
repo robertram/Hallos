@@ -23,9 +23,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Geist', 'sans-serif'],
-        // or if you want to use it as a specific class
-        geist: ['Geist', 'sans-serif'],
+        geist: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
       },
     },
   },
