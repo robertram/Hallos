@@ -1,40 +1,32 @@
 import React from 'react';
 
 export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
+  type?: 'primary' | 'outline' | 'neutral' | 'light';
+  children: React.ReactNode;
   onClick?: () => void;
 }
 
-/** Primary UI component for user interaction */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  //const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+const typeClasses: Record<string, string> = {
+  primary: "bg-light-primary text-white",
+  outline: "border-2 border-gray-300 bg-transparent text-gray-700 text-white",
+  neutral: "bg-light-neutral text-light",
+  light: "bg-white text-black"
+};
+
+export const Button: React.FC<ButtonProps> = ({
+  type,
+  children,
+  onClick,
+}) => {
+
+  const baseClasses = "cursor-pointer text-center rounded-full font-bold text-center w-[180px] h-[23] py-[15px] px-[30px]";
+  const appliedClasses = `${baseClasses} ${type ? typeClasses[type] : ''}`;
+
   return (
-    <button
-      type="button"
-      className={['storybook-button border-solid border-2 border-gray-300 p-4 rounded-xl hover:bg-gray-600 text-small', `storybook-button--${size}`].join(' ')}
-      {...props}
-    >
-      {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
+    <button className={appliedClasses} onClick={onClick}>
+      {children}
     </button>
   );
 };
 
+export default Button;

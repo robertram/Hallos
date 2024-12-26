@@ -12,6 +12,7 @@ export default {
         light: {
           primary: "#CB1BC3",
           secondary: "#6E236E",
+          neutral: "#4C4C58",
           background: "#FFFFFF",
           text: "#171717",
         },
