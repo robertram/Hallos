@@ -8,7 +8,7 @@ export interface ButtonProps {
 
 const typeClasses: Record<string, string> = {
   primary: "bg-light-primary text-white",
-  outline: "border-2 border-gray-300 bg-transparent text-gray-700 text-white",
+  outline: "border-1 border-gray-300 bg-transparent text-gray-700 text-white",
   neutral: "bg-light-neutral text-light",
   light: "bg-white text-black"
 };
