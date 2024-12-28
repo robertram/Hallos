@@ -26,7 +26,6 @@ export default {
       backgroundImage: {
         'primary-gradient': 'linear-gradient(to right, #1A82FE, #A14BFC)',
         'glass-gradient': 'linear-gradient(to top, #D9D9D90F, #D9D9D900)',
-
       },
       fontFamily: {
         geist: ['var(--font-geist-sans)'],
