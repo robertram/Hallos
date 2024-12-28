@@ -24,7 +24,6 @@ npm run storybook
 
 This will start the Storybook server, and you can view it at [http://localhost:6006](http://localhost:6006).
 
-
 ## Project Structure
 
 ### Components
