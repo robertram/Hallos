@@ -10,7 +10,7 @@ const meta = {
   argTypes: {
     type: {
       control: 'select',
-      options: ['primary', 'outline', 'neutral', 'light'],
+      options: ['primary', 'outline', 'neutral', 'light', 'glass'],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -42,9 +42,16 @@ export const Neutral: Story = {
 export const light: Story = {
   args: {
     type: 'light',
-    children: 'light Button',
+    children: 'Light Button',
   },
 };
+
+export const glass: Story = {
+  args: {
+    type: 'glass',
+    children: 'Glass Button'
+  }
+}
 
 
 
