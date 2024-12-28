@@ -24,12 +24,6 @@ npm run storybook
 
 This will start the Storybook server, and you can view it at [http://localhost:6006](http://localhost:6006).
 
-## Project Structure
+## Hallos V2 design
 
-### Components
-
-components/
-├── common/         # Reusable components like buttons, inputs, etc.
-├── layout/         # Layout components like header, footer, sidebar
-├── forms/          # Form-related components
-└── ui/            # UI components like cards, modals, etc.
+![MacBook Air - 22 (3)](https://github.com/user-attachments/assets/9cf29c41-74ae-4eb9-8fdd-92b1a7878062)
