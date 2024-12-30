@@ -4,14 +4,14 @@ import Image from "next/image";
 export const Navbar = () => {
   return (
     <header
-      className="flex flex-wrap justify-between items-center px-4 py-4 h-auto md:h-16"
+      className="flex justify-between items-center px-4 h-16 md:h-16"
       style={{
-        background: "linear-gradient(90deg, #1e1f3a 0%, #17182c 100%)", 
-        width: "100%", 
+        background: "linear-gradient(90deg, #1e1f3a 0%, #17182c 100%)",
+        width: "100%",
       }}
     >
       {/* Logo */}
-      <div className="flex items-center ml-4 mt-2 md:ml-12 md:mt-0">
+      <div className="flex items-center">
         <Image
           src="/LogoHallos.svg"
           alt="Hallos Logo"
@@ -22,7 +22,7 @@ export const Navbar = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center space-x-6 mt-4 md:mt-0">
+      <div className="hidden md:flex items-center space-x-6">
         {/* Links */}
         <nav className="hidden md:flex space-x-6">
           <a
@@ -58,7 +58,6 @@ export const Navbar = () => {
             padding: "3px 4px 3px 3px",
           }}
         >
-          {/* Flag */}
           <div className="flex items-center justify-center w-[28px] h-[28px] rounded-full overflow-hidden">
             <Image
               src="/Spain.svg"
@@ -67,8 +66,6 @@ export const Navbar = () => {
               height={28}
             />
           </div>
-
-          {/* Frame */}
           <div
             className="flex items-center justify-center"
             style={{
@@ -96,8 +93,8 @@ export const Navbar = () => {
             lineHeight: "24px",
             letterSpacing: "-0.5px",
             textAlign: "center",
-            background: "transparent", 
-            cursor: "pointer", 
+            background: "transparent",
+            cursor: "pointer",
           }}
         >
           login
@@ -121,6 +118,20 @@ export const Navbar = () => {
           }}
         >
           Create event
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className="flex md:hidden items-center">
+        <button
+          className="text-white"
+          style={{
+            fontSize: "24px",
+            lineHeight: "28px",
+            cursor: "pointer",
+          }}
+        >
+          ☰ {/* Icono de hamburguesa */}
         </button>
       </div>
     </header>
