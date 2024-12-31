@@ -4,6 +4,7 @@ import { Button } from './Button';
 const meta = {
   title: 'Example/Button',
   component: Button,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -52,6 +53,14 @@ export const glass: Story = {
     children: 'Glass Button'
   }
 }
+
+export const GlassWithIcon: Story = {
+  args: {
+    type: 'glass',
+    icon: 'Filter',
+    children: 'Glass Button with Icon',
+  },
+};
 
 
 

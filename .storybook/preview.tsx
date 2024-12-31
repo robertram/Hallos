@@ -2,6 +2,7 @@ import React from 'react'
 import type { Preview } from "@storybook/react";
 import { Geist } from "next/font/google";
 import "../src/app/globals.css";
+import { themes } from "@storybook/theming";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -11,6 +12,9 @@ const geist = Geist({
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      theme: themes.dark
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

@@ -22,10 +22,15 @@ export default {
           background: "#171717",
           text: "#FFFFFF",
         },
+        customGray: {
+          49: 'rgba(217, 217, 217, 0.49)',
+          0: 'rgba(217, 217, 217, 0)',
+        },
       },
       backgroundImage: {
         'primary-gradient': 'linear-gradient(to right, #1A82FE, #A14BFC)',
         'glass-gradient': 'linear-gradient(to top, #D9D9D90F, #D9D9D900)',
+        'custom-gradient': 'linear-gradient(180deg, rgba(217, 217, 217, 0.06) 0%, rgba(217, 217, 217, 0.00) 125.86%)',
       },
       fontFamily: {
         geist: ['var(--font-geist-sans)'],

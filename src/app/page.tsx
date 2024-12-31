@@ -1,4 +1,3 @@
-import { Typography } from "@/components/ui/Typography/Typography";
 import Image from "next/image";
 
 export default function Home() {
