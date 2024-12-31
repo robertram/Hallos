@@ -25,27 +25,27 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   return (
     <div
-      className={`flex items-center bg-glass-gradient rounded-xl ${
-        type === "primary"
-          ? "p-3 gap-2"
-          : "px-0 pl-8 pr-0 max-w-[668px] w-screen"
-      } border-solid border border-white-10`}
+      className={`flex items-center ${
+        type === "primary" ? "p-3 gap-2" : "flex-wrap gap-3 p-3 sm:max-w-[668px] sm:w-screen sm:px-4 sm:py-0 sm:pr-0"
+      } bg-glass-gradient rounded-xl border-solid border border-white-10 w-full`}
     >
       {type === "primary" && (
-        <button onClick={handleSearch}>
+        <button onClick={handleSearch} className="flex-shrink-0">
           <Loupe />
         </button>
       )}
       <input
         type="text"
-        className="flex-1 bg-transparent text-white placeholder-white outline-none"
+        className={`flex-1 bg-transparent text-white placeholder-white outline-none ${
+          type === "secondary" ? "w-full sm:w-auto" : ""
+        }`}
         placeholder={placeholder}
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      {categoryOptions && type === 'secondary' && (
+      {categoryOptions && type === "secondary" && (
         <select
-          className="bg-transparent text-gray-300 border-l-[1px] border-l-white-10 outline-none mr-3 pl-3 py-[14px] max-w-[200px] w-screen"
+          className={`bg-transparent text-gray-300 border-l-0 border-t-[1px] border-b-[1px] sm:border-t-0 sm:border-l-[1px] sm:border-b-0 sm:border-l-white-10 outline-none pl-3 py-3 w-full sm:max-w-[230px] sm:w-screen`}
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
@@ -59,9 +59,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
       {type === "secondary" && (
         <button
           onClick={handleSearch}
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl p-4"
+          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl py-3 px-5 w-full sm:w-auto"
         >
-          <Loupe />
+          <Loupe className="hidden sm:block" />
+          <span className="block sm:hidden">Bucar</span>
         </button>
       )}
     </div>
