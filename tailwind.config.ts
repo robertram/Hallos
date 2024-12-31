@@ -8,7 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      borderColor: {
+        'white-10': 'rgba(255, 255, 255, 0.1)',
+      },
       colors: {
+        'white-10': 'rgba(255, 255, 255, 0.5)',
         light: {
           primary: "#CB1BC3",
           secondary: "#6E236E",
