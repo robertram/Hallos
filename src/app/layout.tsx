@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import "./globals.css";
+import { Header } from "@/components/layout/Header/Header";
+import Footer from "@/components/layout/Footer/footer";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -20,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.className}`}>
-      <body>{children}</body>
+      <body>
+
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
