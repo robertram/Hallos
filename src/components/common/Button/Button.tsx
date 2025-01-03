@@ -10,7 +10,7 @@ export interface ButtonProps {
 
 const typeClasses: Record<string, string> = {
   primary: "bg-primary-gradient text-white",
-  outline: "border border-gray-300 bg-transparent text-gray-700 text-white",
+  outline: "border border-gray-300 bg-transparent text-gray-700 text-white w-min",
   neutral: "bg-light-neutral text-light",
   light: "bg-white text-black",
   glass: "bg-custom-gradient text-white !rounded-[12px] !px-[12px] !px-[14px] !w-min border border-white border-opacity-10"

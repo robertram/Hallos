@@ -1,15 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Button from "../common/Button/Button";
 
 export const Navbar = () => {
+  const navItems = ["/events", "/prices"];
+
   return (
-    <header
-      className="flex justify-between items-center px-4 h-16 md:h-16"
-      style={{
-        background: "linear-gradient(90deg, #1e1f3a 0%, #17182c 100%)",
-        width: "100%",
-      }}
-    >
+    <header className="flex justify-between items-center px-4 py-[30px] h-full">
       {/* Logo */}
       <div className="flex items-center">
         <Image
@@ -25,30 +22,15 @@ export const Navbar = () => {
       <div className="hidden md:flex items-center space-x-6">
         {/* Links */}
         <nav className="hidden md:flex space-x-6">
-          <a
-            href="/events"
-            className="text-white font-medium hover:text-gray-400 transition"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              lineHeight: "20px",
-              letterSpacing: "0px",
-            }}
-          >
-            Events
-          </a>
-          <a
-            href="/prices"
-            className="text-white font-medium hover:text-gray-400 transition"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              lineHeight: "20px",
-              letterSpacing: "0px",
-            }}
-          >
-            Prices
-          </a>
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={item}
+              className="text-white font-medium hover:text-gray-400 transition text-text2"
+            >
+              {item === "/events" ? "Events" : "Prices"}
+            </a>
+          ))}
         </nav>
 
         {/* Language Switcher */}
@@ -85,40 +67,14 @@ export const Navbar = () => {
         </div>
 
         {/* Login Button */}
-        <button
-          className="flex justify-center items-center h-[48px] px-[30px] rounded-[24.314px] border border-white text-white font-semibold transition hover:opacity-80"
-          style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
-            lineHeight: "24px",
-            letterSpacing: "-0.5px",
-            textAlign: "center",
-            background: "transparent",
-            cursor: "pointer",
-          }}
-        >
+        <Button type="outline">
           login
-        </button>
+        </Button>
 
         {/* Create Event Button */}
-        <button
-          className="flex justify-center items-center h-[48px] px-[30px] rounded-[110px] text-white font-semibold transition hover:opacity-90"
-          style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
-            lineHeight: "19px",
-            fontWeight: 600,
-            letterSpacing: "-0.5px",
-            background: "linear-gradient(90deg, #1A82FE 0%, #A14BFC 100%)",
-            borderRadius: "110px",
-            border: "none",
-            padding: "14px 30px",
-            cursor: "pointer",
-            transition: "opacity 0.3s",
-          }}
-        >
+        <Button type="primary">
           Create event
-        </button>
+        </Button>
       </div>
 
       {/* Mobile Menu */}

@@ -1,5 +1,3 @@
-// import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
-
 import Button from "@/components/common/Button/Button";
 import { EventCard } from "@/components/common/EventCard/EventCard";
 import SearchBar from "@/components/common/SearchBar/SearchBar";
@@ -70,8 +68,6 @@ export default function Home() {
       price: "5.00",
       title: "Event 8"
     }
-
-    
   ];
 
   return (
