@@ -1,5 +1,6 @@
+"use client"
 import { Loupe } from "@/icons";
-import React from "react";
+import React, { useState } from "react";
 
 type SearchBarProps = {
   type: "primary" | "secondary";
@@ -14,8 +15,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   categoryOptions,
   onSearch,
 }) => {
-  const [searchValue, setSearchValue] = React.useState("");
-  const [selectedCategory, setSelectedCategory] = React.useState(
+  const [searchValue, setSearchValue] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(
     categoryOptions ? categoryOptions[0] : ""
   );
 
@@ -25,9 +26,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   return (
     <div
-      className={`flex items-center ${
-        type === "primary" ? "p-3 gap-2" : "flex-wrap gap-3 p-3 sm:max-w-[668px] sm:w-screen sm:px-4 sm:py-0 sm:pr-0"
-      } bg-glass-gradient rounded-xl border-solid border border-white-10 w-full`}
+      className={`flex items-center ${type === "primary" ? "p-3 gap-2" : "flex-wrap gap-3 p-3 sm:max-w-[668px] sm:w-screen sm:px-4 sm:py-0 sm:pr-0"
+        } bg-glass-gradient rounded-xl border-solid border border-white-10 w-full`}
     >
       {type === "primary" && (
         <button onClick={handleSearch} className="flex-shrink-0">
@@ -36,12 +36,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
       )}
       <input
         type="text"
-        className={`flex-1 bg-transparent text-white placeholder-white outline-none ${
-          type === "secondary" ? "w-full sm:w-auto" : ""
-        }`}
+        style={{ opacity: 1 }}
+        className={`flex-1 bg-transparent text-white outline-none text-text1 ${type === "secondary" ? "w-full sm:w-auto" : ""
+          }`}
         placeholder={placeholder}
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
+        onFocus={(e) => e.target.style.setProperty('--placeholder-opacity', '0.5')}
+        onBlur={(e) => e.target.style.setProperty('--placeholder-opacity', '1')}
       />
       {categoryOptions && type === "secondary" && (
         <select
@@ -50,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
           {categoryOptions.map((option) => (
-            <option key={option} value={option}>
+            <option key={option} value={option} className="text-text1">
               {option}
             </option>
           ))}
@@ -59,10 +61,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
       {type === "secondary" && (
         <button
           onClick={handleSearch}
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl py-3 px-5 w-full sm:w-auto"
+          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl w-[58px] h-[58px] "
         >
-          <Loupe className="hidden sm:block" />
-          <span className="block sm:hidden">Bucar</span>
+          <Loupe className="hidden sm:block mx-auto" />
+          <span className="block sm:hidden">Buscar</span>
         </button>
       )}
     </div>

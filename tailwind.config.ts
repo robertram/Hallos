@@ -42,7 +42,7 @@ export default {
       },
       fontSize: {
         'h1': ['66px', { lineHeight: '66px', letterSpacing: '-3px' }],
-        'h2': ['44px', { lineHeight: '55px', letterSpacing: '-3px' }],
+        'h2': ['44px', { lineHeight: '55px', letterSpacing: '-3px', fontWeight: '600' }],
         'h3': ['30px', { lineHeight: '40px', letterSpacing: '-1px' }],
         'h4': ['20px', { lineHeight: '28px', letterSpacing: '-1px' }],
         'h5': ['16px', { lineHeight: '24px', letterSpacing: '-0.5px' }],

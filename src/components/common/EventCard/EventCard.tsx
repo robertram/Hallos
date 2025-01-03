@@ -37,9 +37,9 @@ const formatDate = (timestamp: string): string => {
 
 export const EventCard = ({ image, title, date, location, price }: EventCardProps) => {
   return (
-    <article className="bg-[#272727] text-white border border-[#3B3B3B] rounded-2xl w-full max-w-sm">
-      <div className={`relative ${!price ? "opacity-80" : ""}`}>
-        <img src={image} alt={title} className="w-full object-cover" />
+    <article className="bg-[#272727] text-white border border-[#3B3B3B] rounded-2xl w-full md:max-w-sm">
+      <div className={`relative  ${!price ? "opacity-80" : ""}`}>
+        <img src={image} alt={title} className=" w-full h-56 rounded-t-2xl object-cover" />
         {!price && (
           <span className="absolute top-2.5 right-2.5 bg-neutral-500 text-white text-sm font-normal py-2 px-2.5 rounded-3xl">
             Finished
