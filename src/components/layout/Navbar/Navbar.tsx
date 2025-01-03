@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Button from "../common/Button/Button";
+import Button from "../../common/Button/Button";
 
 export const Navbar = () => {
   const navItems = ["/events", "/prices"];
