@@ -1,21 +1,24 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../../common/Button/Button";
+import Link from "next/link";
 
 export const Navbar = () => {
   const navItems = ["/events", "/prices"];
 
   return (
-    <header className="flex justify-between items-center px-4 py-[30px] h-full">
+    <header className="flex justify-between items-center px-4 py-[20px] h-full">
       {/* Logo */}
       <div className="flex items-center">
-        <Image
-          src="/LogoHallos.svg"
-          alt="Hallos Logo"
-          width={88}
-          height={47}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src="/LogoHallos.svg"
+            alt="Hallos Logo"
+            width={88}
+            height={47}
+            priority
+          />
+        </Link>
       </div>
 
       {/* Right Section */}
@@ -48,15 +51,7 @@ export const Navbar = () => {
               height={28}
             />
           </div>
-          <div
-            className="flex items-center justify-center"
-            style={{
-              width: "16px",
-              height: "16px",
-              margin: "9px",
-              opacity: 0.5,
-            }}
-          >
+          <div className="flex items-center justify-center w-[16px] h-[16px] m-[9px] opacity-50">
             <Image
               src="/Frame.svg"
               alt="Dropdown Icon"
@@ -66,26 +61,23 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Login Button */}
-        <Button type="outline">
-          login
-        </Button>
+        <div>
+          {/* Login Button */}
+          <Button type="outline" className="mr-[20px]">
+            login
+          </Button>
 
-        {/* Create Event Button */}
-        <Button type="primary">
-          Create event
-        </Button>
+          {/* Create Event Button */}
+          <Button type="primary">
+            Create event
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <div className="flex md:hidden items-center">
         <button
-          className="text-white"
-          style={{
-            fontSize: "24px",
-            lineHeight: "28px",
-            cursor: "pointer",
-          }}
+          className="text-white text-2xl leading-7 cursor-pointer"
         >
           ☰ {/* Icono de hamburguesa */}
         </button>

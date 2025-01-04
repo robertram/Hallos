@@ -6,6 +6,7 @@ export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   icon?: string;
+  className?: string
 }
 
 const typeClasses: Record<string, string> = {
@@ -21,6 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
   icon,
+  className
 }) => {
 
   const IconComponent = icon && icon in Icons ? Icons[icon.charAt(0).toUpperCase() + icon.slice(1) as keyof typeof Icons] : null;
@@ -28,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
   const appliedClasses = `${baseClasses} ${type ? typeClasses[type] : ''} ${IconComponent ? 'flex' : ''}`;
 
   return (
-    <button className={appliedClasses} onClick={onClick}>
+    <button className={`${appliedClasses} ${className}`} onClick={onClick}>
       {IconComponent && <IconComponent />}
       <span className={`${IconComponent ? 'ml-2 my-auto' : ''}`}>
         {children}

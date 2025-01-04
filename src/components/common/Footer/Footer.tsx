@@ -10,7 +10,7 @@ const Footer = () => {
       className="text-gray-400 py-10" 
       style={{ background: 'linear-gradient(180deg, rgba(217, 217, 217, 0.06) 0%, rgba(217, 217, 217, 0.00) 100%)' }}
     >
-      <div className="container md:mx-auto flex flex-col md:flex-row gap-6 md:gap-0 justify-between mx-6">
+      <div className="md:mx-auto flex flex-col md:flex-row gap-6 md:gap-0 justify-between mx-6">
         <div>
           <Image src="/HallosLetters.svg" alt="Logo" width={33} height={27} className="w-32 mb-4" />
           <p className="text-sm text-white font-geist text-[14px] normal-case font-normal leading-[28px] opacity-60 max-w-[412px]">
