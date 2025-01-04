@@ -1,7 +1,8 @@
 import Button from "@/components/common/Button/Button";
 import { EventCard } from "@/components/common/EventCard/EventCard";
 import SearchBar from "@/components/common/SearchBar/SearchBar";
-import { fullGridEvents, oneEvent } from "@/utils/events";
+import { fullGridEvents } from "@/utils/events";
+//oneEvent
 
 export default function Home() {
   const events = fullGridEvents;
