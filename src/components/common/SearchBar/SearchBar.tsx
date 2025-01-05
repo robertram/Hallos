@@ -29,15 +29,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
       className={`flex items-center ${type === "primary" ? "p-3 gap-2" : "flex-wrap gap-3 p-3 sm:max-w-[668px] sm:w-screen sm:px-4 sm:py-0 sm:pr-0"
         } bg-glass-gradient rounded-xl border-solid border border-white-10 w-full`}
     >
+      {/* <Loupe /> */}
       {type === "primary" && (
         <button onClick={handleSearch} className="flex-shrink-0">
-          <Loupe />
+          <Loupe className="w-6 h-6 hover:fill-red-700 opacity-50" />
         </button>
       )}
       <input
         type="text"
         style={{ opacity: 1 }}
-        className={`flex-1 bg-transparent text-white outline-none text-text1 ${type === "secondary" ? "w-full sm:w-auto" : ""
+        className={`flex-1 bg-transparent text-white outline-none !text-text1 ${type === "secondary" ? "w-full sm:w-auto pl-[15px]" : ""
           }`}
         placeholder={placeholder}
         value={searchValue}

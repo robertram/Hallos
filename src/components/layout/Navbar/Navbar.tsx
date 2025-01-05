@@ -2,23 +2,33 @@ import React from "react";
 import Image from "next/image";
 import Button from "../../common/Button/Button";
 import Link from "next/link";
+import SearchBar from "@/components/common/SearchBar/SearchBar";
 
 export const Navbar = () => {
   const navItems = ["/events", "/prices"];
 
   return (
     <header className="flex justify-between items-center px-4 py-[20px] h-full">
-      {/* Logo */}
-      <div className="flex items-center">
-        <Link href="/">
-          <Image
-            src="/LogoHallos.svg"
-            alt="Hallos Logo"
-            width={88}
-            height={47}
-            priority
+      <div className="flex">
+        {/* Logo */}
+        <div className="flex items-center mr-[35px]">
+          <Link href="/">
+            <Image
+              src="/LogoHallos.svg"
+              alt="Hallos Logo"
+              width={88}
+              height={47}
+              priority
+            />
+          </Link>
+        </div>
+
+        <div className="max-w-[250px]">
+          <SearchBar
+            type="primary"
+            placeholder="Search event"
           />
-        </Link>
+        </div>
       </div>
 
       {/* Right Section */}
