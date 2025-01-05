@@ -3,38 +3,16 @@ import Image from "next/image";
 import Button from "../../common/Button/Button";
 import Link from "next/link";
 import SearchBar from "@/components/common/SearchBar/SearchBar";
+import { MobileMenu } from "@/components/common/MobileMenu/MobileMenu";
 
 export const Navbar = () => {
   const navItems = ["/events", "/prices"];
 
-  return (
-    <header className="flex justify-between items-center px-4 py-[20px] h-full">
-      <div className="flex">
-        {/* Logo */}
-        <div className="flex items-center mr-[35px]">
-          <Link href="/">
-            <Image
-              src="/LogoHallos.svg"
-              alt="Hallos Logo"
-              width={88}
-              height={47}
-              priority
-            />
-          </Link>
-        </div>
-
-        <div className="max-w-[250px]">
-          <SearchBar
-            type="primary"
-            placeholder="Search event"
-          />
-        </div>
-      </div>
-
-      {/* Right Section */}
-      <div className="hidden md:flex items-center space-x-6">
+  const navbarContent = (isMobile: boolean) => {
+    return (
+      <div className={`items-center ${isMobile ? '!block md:hidden my-4' : 'hidden md:flex space-x-6'}`}>
         {/* Links */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className={` ${isMobile ? 'flex flex-col space-y-4' : 'hidden md:flex space-x-6'}`}>
           {navItems.map((item, index) => (
             <a
               key={index}
@@ -48,7 +26,9 @@ export const Navbar = () => {
 
         {/* Language Switcher */}
         <div
-          className="flex items-center justify-between w-[62px] h-[34px] rounded-[17px] bg-[rgba(217,217,217,0.12)] opacity-70"
+          className={`flex items-center justify-between w-[62px] h-[34px] rounded-[17px] bg-[rgba(217,217,217,0.12)] opacity-70
+             ${isMobile ? 'my-6' : ''}
+            `}
           style={{
             padding: "3px 4px 3px 3px",
           }}
@@ -71,7 +51,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <div>
+        <div className="grid md:block gap-4">
           {/* Login Button */}
           <Button type="outline" className="mr-[20px]">
             login
@@ -83,14 +63,62 @@ export const Navbar = () => {
           </Button>
         </div>
       </div>
+    )
+  }
+
+  return (
+    <header className="flex justify-between items-center px-4 py-[20px] h-full">
+      <div className="flex">
+        {/* Logo */}
+        <div className="flex items-center mr-[35px]">
+          <Link href="/">
+            <Image
+              src="/LogoHallos.svg"
+              alt="Hallos Logo"
+              width={88}
+              height={47}
+              priority
+            />
+          </Link>
+        </div>
+
+        <div className="max-w-[250px] mg:block hidden">
+          <SearchBar
+            type="primary"
+            placeholder="Search event"
+          />
+        </div>
+      </div>
+
+      {/* Right Section */}
+      {navbarContent(false)}
 
       {/* Mobile Menu */}
-      <div className="flex md:hidden items-center">
+      {/* <div className="flex md:hidden items-center">
         <button
           className="text-white text-2xl leading-7 cursor-pointer"
         >
-          ☰ {/* Icono de hamburguesa */}
+          ☰ 
         </button>
+      </div> */}
+
+      <div className="flex md:hidden items-center">
+        <MobileMenu >
+          <div>
+          <div className="flex items-center mr-[35px]">
+          <Link href="/">
+            <Image
+              src="/LogoHallos.svg"
+              alt="Hallos Logo"
+              width={88}
+              height={47}
+              priority
+            />
+          </Link>
+        </div>
+            {navbarContent(true)}
+          </div>
+        </MobileMenu>
       </div>
     </header>
   );
