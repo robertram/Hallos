@@ -1,5 +1,5 @@
 import React from "react";
-import { GitHub, Facebook, Instagram, Twitter } from "../../../icons";
+import { Instagram, Twitter } from "../../../icons";
 import Image from "next/image";
 
 const Footer = () => {

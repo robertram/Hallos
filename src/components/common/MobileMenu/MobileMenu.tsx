@@ -1,16 +1,13 @@
-// import { Button } from "@/components/ui/button"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 
-export const MobileMenu = ({ children }: any) => {
+export const MobileMenu = ({ children }: Readonly<{
+  children: React.ReactNode;
+}>) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
