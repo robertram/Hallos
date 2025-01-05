@@ -42,6 +42,7 @@ export default function Home() {
                 location={event.location}
                 price={event.price}
                 title={event.title}
+                link={event.slug ? `event/${event.slug}` : undefined}
               />
             </div>
           ))}

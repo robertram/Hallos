@@ -4,7 +4,8 @@ export const fullGridEvents = [
     image: "/images/vueltos-un-colocho.png",
     location: "Teatro El Escenario",
     price: "43.33",
-    title: "Vueltos un colocho"
+    title: "Vueltos un colocho",
+    slug: 'vueltosUnColocho'
   },
   {
     date: "1735910400000",
@@ -54,7 +55,7 @@ export const fullGridEvents = [
     location: "Location 8",
     price: "5.00",
     title: "Event 8"
-  }, 
+  },
   {
     date: "1736428800000",
     image: "https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fd59be41c-9e7d-4daf-b48a-c0830ab31492%2FBanner-da5fc65d-4c8d-4186-8c5b-22d02b0ddae0?alt=media&token=a064e42c-e676-4adf-a78b-5a7b4c216b56",
