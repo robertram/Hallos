@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { EventCard } from "./EventCard";
 
 const meta = {
-  title: "Components/EventCard",
+  title: "Shared/EventCard",
   component: EventCard,
   tags: ['autodocs'],
   parameters: {
