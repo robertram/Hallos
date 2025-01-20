@@ -120,6 +120,25 @@ npm run storybook
 
 You should see the Button component listed in the Storybook UI under Components.
 
+
+## Typography
+
+If you want to apply one of this typographies, use the className text-
+
+For example: h2 is text-h2 or button2 is text-button2
+
+
+### Viewing Typography in Storybook
+
+To preview the typography styles in Storybook, run the following command:
+
+npm run storybook
+
+Navigate to the Typography section to see all available text styles or visit the following link directly:
+
+http://localhost:6006/?path=/docs/config-typography--docs
+
+
 ## Hallos V2 design
 
 ![MacBook Air - 22 (3)](https://github.com/user-attachments/assets/9cf29c41-74ae-4eb9-8fdd-92b1a7878062)
