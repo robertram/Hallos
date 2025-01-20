@@ -26,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   return (
     <div
-      className={`flex items-center ${type === "primary" ? "p-3 gap-2" : "flex-wrap gap-3 p-3 sm:max-w-[668px] sm:w-screen sm:px-4 sm:py-0 sm:pr-0"
+      className={`flex items-center ${type === "primary" ? "p-3 gap-2" : "flex-wrap gap-3 p-3 md:max-w-[668px] md:w-screen md:px-4 md:py-0 md:pr-0"
         } bg-glass-gradient rounded-xl border-solid border border-white-10 w-full`}
     >
       {/* <Loupe /> */}
@@ -38,7 +38,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <input
         type="text"
         style={{ opacity: 1 }}
-        className={`flex-1 bg-transparent text-white outline-none !text-text1 ${type === "secondary" ? "w-full sm:w-auto pl-[15px]" : ""
+        className={`flex-1 bg-transparent text-white outline-none !text-text1 ${type === "secondary" ? "w-full md:w-auto pl-[15px] border-b-[1px] md:border-b-0 pb-4 md:pb-0 " : ""
           }`}
         placeholder={placeholder}
         value={searchValue}
@@ -48,7 +48,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       />
       {categoryOptions && type === "secondary" && (
         <select
-          className={`bg-transparent text-gray-300 border-l-0 border-t-[1px] border-b-[1px] sm:border-t-0 sm:border-l-[1px] sm:border-b-0 sm:border-l-white-10 outline-none pl-3 py-3 w-full sm:max-w-[230px] sm:w-screen`}
+          className={`bg-transparent text-gray-300  md:border-t-0 md:border-l-[1px] md:border-b-0 md:border-l-white-10 outline-none pl-3 py-3 w-full md:max-w-[230px] md:w-screen`}
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
@@ -62,10 +62,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
       {type === "secondary" && (
         <button
           onClick={handleSearch}
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl w-[58px] h-[58px] "
+          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl md:w-[58px] h-[58px] w-full text-button1 font-semibold"
         >
-          <Loupe className="hidden sm:block mx-auto" />
-          <span className="block sm:hidden">Buscar</span>
+          <Loupe className="hidden md:block mx-auto" />
+          <span className="block md:hidden">Buscar</span>
         </button>
       )}
     </div>
