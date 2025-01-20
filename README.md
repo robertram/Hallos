@@ -20,6 +20,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Storybook is an open-source tool that allows developers to build UI components and pages in isolation. It provides a development environment where components can be tested, documented, and shared without needing to run the entire application.
 
+![Screenshot 2025-01-20 at 3 48 33 PM](https://github.com/user-attachments/assets/0647bc0d-aeea-48dc-b741-dce8a3f1c063)
+
 Storybook is particularly useful for:
 
 - Developing components in isolation.
