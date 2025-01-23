@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-First, install de dependencies and run the development server:
+First, install the dependencies and run the development server:
 
 ```bash
 npm install
@@ -123,7 +123,7 @@ You should see the Button component listed in the Storybook UI under Components.
 
 ## Typography
 
-If you want to apply one of this typographies, use the className text-
+If you want to apply one of these typographies, use the className text-
 
 For example: h2 is text-h2 or button2 is text-button2
 
