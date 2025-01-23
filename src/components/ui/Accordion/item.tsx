@@ -19,7 +19,7 @@ export const ItemAccordion: FC<Props> = ({ faq, focus, onClick }): ReactElement 
       onClick={onClick}
     >
       <div className='flex justify-between w-full'>
-        <h3 className='text-base font-bold'>{ faq.title }</h3>
+        <h3 className='text-base font-bold max-w-[88%]'>{ faq.title }</h3>
 
         <Arrow className={`transform transition-transform duration-500 pt-1
             ${focus ? 'translate-y-0.5' : 'rotate-180'}

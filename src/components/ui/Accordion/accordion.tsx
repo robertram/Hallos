@@ -15,8 +15,10 @@ export const Accordion: FC<AccordionProps> = ({ faqs }) => {
   }
 
   return (
-    <div
-      className={`flex flex-col gap-y-4 transition-all duration-500 pb-10 overflow-hidden h-[520px]`}
+    <div 
+      className={`flex flex-col gap-y-4 transition-all
+        duration-500 pb-10 overflow-hidden h-[620px] md:h-[520px]
+      `}
     >
       {
         faqs.map((faq, i) => (
