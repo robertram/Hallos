@@ -2,7 +2,7 @@ export const Typography = () => {
   return (
     <div className="space-y-6 font-geist">
 
-<p>If you want to apply one of this typographies, use the className text-</p>
+<p>If you want to apply one of these typographies, use the className text-</p>
 <p>For example: h2 is text-h2 or button2 is text-button2</p>
 
       {Headings()}
