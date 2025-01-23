@@ -1,7 +1,9 @@
 import Button from "@/components/common/Button/Button";
 import { EventCard } from "@/components/common/EventCard/EventCard";
 import SearchBar from "@/components/common/SearchBar/SearchBar";
+import { Accordion } from "@/components/ui/Accordion/accordion";
 import { fullGridEvents } from "@/utils/events";
+import { FAQs } from "@/utils/faqs";
 //oneEvent
 
 export default function Home() {
@@ -56,6 +58,7 @@ export default function Home() {
 
       </div>
 
+      <Accordion faqs={FAQs}/>
     </div>
   );
 }

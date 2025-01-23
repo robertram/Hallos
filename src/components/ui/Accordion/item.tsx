@@ -1,14 +1,14 @@
 import { FC, ReactElement } from 'react'
 import { Arrow } from '@/icons'
+import { FAQ } from '@/types/faq.type'
 
 type Props = {
-  title: string
-  description: string
+  faq: FAQ
   focus: boolean
   onClick: () => void
 }
 
-export const ItemAccordion: FC<Props> = ({ title, description, focus, onClick }): ReactElement => {
+export const ItemAccordion: FC<Props> = ({ faq, focus, onClick }): ReactElement => {
   return (
     <button
       className={`flex flex-col items-left flex-wrap p-5 max-w-2xl text-left
@@ -19,7 +19,7 @@ export const ItemAccordion: FC<Props> = ({ title, description, focus, onClick })
       onClick={onClick}
     >
       <div className='flex justify-between w-full'>
-        <h3 className='text-base font-bold'>{ title }</h3>
+        <h3 className='text-base font-bold'>{ faq.title }</h3>
 
         <Arrow className={`transform transition-transform duration-500 pt-1
             ${focus ? 'translate-y-0.5' : 'rotate-180'}
@@ -32,7 +32,7 @@ export const ItemAccordion: FC<Props> = ({ title, description, focus, onClick })
           ${focus ? 'max-h-32 ease-in' : 'max-h-0 ease-in-out'}
         `}
       >
-        { description }
+        { faq.description }
       </p>
     </button>
   )
