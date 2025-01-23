@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { FaCcVisa, FaCcMastercard } from "react-icons/fa";
-import { FaEthereum } from "react-icons/fa6";
+import Image from "next/image";
 
 const PaymentMethod = () => {
-  const [selectedMethod, setSelectedMethod] = useState("card");
+  const [selectedMethod, setSelectedMethod] = useState("crypto");
 
   return (
     <div className="min-h-screen bg-[#0A0B0F] p-6">
@@ -17,34 +16,48 @@ const PaymentMethod = () => {
         <div className="space-y-4">
           {/* Bank Card Option */}
           <div
-            className={`flex items-start justify-between p-6 rounded-2xl ${
+            className={`flex p-6 rounded-2xl ${
               selectedMethod === "card"
                 ? "bg-[#1A1B23] border-[#3B82F6]"
                 : "bg-[#131318] border-transparent"
             } border cursor-pointer transition-colors`}
             onClick={() => setSelectedMethod("card")}
           >
-            <div className="flex gap-4">
-              <input
-                type="radio"
-                checked={selectedMethod === "card"}
-                className="mt-1.5 h-4 w-4 border-gray-600 text-blue-500 focus:ring-blue-500 focus:ring-offset-gray-900"
-                readOnly
-              />
-              <div>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="flex gap-1">
-                    <FaCcVisa className="text-3xl text-[#1434CB]" />
-                    <FaCcMastercard className="text-3xl text-[#FF5F00]" />
-                  </div>
-                  <span className="font-medium text-white">Bank Card</span>
+            <div className="flex items-center gap-6">
+              <div className="flex flex-col items-center">
+                <div className="relative w-12 h-8">
+                  <Image
+                    src="/images/VISA.png"
+                    alt="Visa"
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </div>
+                <div className="relative w-12 h-8 mt-2">
+                  <Image
+                    src="/images/hallos.png"
+                    alt="Mastercard"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="font-medium text-white text-lg">
+                  Bank Card
+                </span>
                 <p className="text-sm text-gray-400">
                   Payment by credit or debit card VISA, MASTERCARD Credit card,
                   debit card and bank transfers.
                 </p>
               </div>
             </div>
+            <input
+              type="radio"
+              checked={selectedMethod === "card"}
+              className="ml-auto h-5 w-5 accent-blue-500"
+              readOnly
+            />
           </div>
 
           {/* Crypto Option */}
@@ -57,24 +70,22 @@ const PaymentMethod = () => {
             onClick={() => setSelectedMethod("crypto")}
           >
             <div className="p-6">
-              <div className="flex gap-4">
+              <div className="flex items-center gap-4">
+                <div className="relative w-12 h-12 bg-[#3B82F6] p-2 rounded-full flex items-center justify-center">
+                  <Image
+                    src="/images/eth.png"
+                    alt="Ethereum"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+                <span className="font-medium text-white text-lg">Crypto</span>
                 <input
                   type="radio"
                   checked={selectedMethod === "crypto"}
-                  className="mt-1.5 h-4 w-4 border-gray-600 text-blue-500 focus:ring-blue-500 focus:ring-offset-gray-900"
+                  className="ml-auto h-5 w-5 accent-blue-500"
                   readOnly
                 />
-                <div>
-                  <div className="flex items-center gap-4 mb-2">
-                    <div className="bg-[#3B82F6] p-2 rounded-full">
-                      <FaEthereum className="text-xl text-white" />
-                    </div>
-                    <span className="font-medium text-white">Crypto</span>
-                  </div>
-                  <p className="text-sm text-gray-400">
-                    Payment with cryptocurrencies
-                  </p>
-                </div>
               </div>
 
               {selectedMethod === "crypto" && (
@@ -101,9 +112,21 @@ const PaymentMethod = () => {
                   </ol>
 
                   <div className="bg-[#131318] p-4 rounded-xl flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-gray-400">Price to pay</p>
-                      <p className="text-xl font-bold text-white">73.5 USDC</p>
+                    <div className="flex items-center gap-2">
+                      <div className="relative w-8 h-8">
+                        <Image
+                          src="/images/dollar.png"
+                          alt="Dollar"
+                          layout="fill"
+                          objectFit="contain"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-400">Price to pay</p>
+                        <p className="text-xl font-bold text-white">
+                          73.5 USDC
+                        </p>
+                      </div>
                     </div>
                     <div className="flex gap-3">
                       <button className="px-4 py-2 bg-[#1A1B23] text-white rounded-lg text-sm hover:bg-[#22232C] transition-colors">
