@@ -1,5 +1,6 @@
 import { Calendar, Location } from "@/icons";
 import Link from "next/link";
+import Image from "next/image";
 
 interface AccountTicketProps {
   title: string;
@@ -38,12 +39,9 @@ const formatDate = (timestamp: string): string => {
   return formattedDate;
 };
 
-export const AccountTicket = ({ title, date, location}: AccountTicketProps) => {
+export const AccountTicket = ({ title, date, location, tickets }: AccountTicketProps) => {
   return (
       <article className="bg-[#272727] text-white border border-[#3B3B3B] rounded-2xl w-[280px] md:max-w-sm">
-        <div className={`relative`}>
-          {/* <img src={image} alt={title} className=" w-full h-56 rounded-t-2xl object-cover" /> */}
-        </div>
         <div className="px-4 py-6">
           <h3 className="text-base font-bold">{title}</h3>
           <div className="flex items-center mt-1">
@@ -57,6 +55,26 @@ export const AccountTicket = ({ title, date, location}: AccountTicketProps) => {
             <p className="text-sm text-[#BEBEBE] mt-1 ml-1">
               {location}
             </p>
+          </div>
+          
+          {/* Tickets Section */}
+          <div className="mt-4">
+            <p className="text-sm text-[#BEBEBE] mb-2">Your tickets ({tickets.length})</p>
+            <div className="grid grid-cols-2 gap-2">
+              {tickets.map((ticket, index) => (
+                <div key={index} className="relative">
+                  <Image
+                    src={ticket.image}
+                    alt={ticket.title}
+                    width={120}
+                    height={160}
+                    className="rounded-lg object-cover"
+                  />
+                  <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center">
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </article>
