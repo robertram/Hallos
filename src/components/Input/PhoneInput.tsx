@@ -56,12 +56,13 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
 
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-white text-sm">{label}</label>
-      <div className="relative flex items-center bg-[#1C1C27] rounded-lg gap-3 h-[45px]">
-        <div className="relative">
+      <label className="text-white text-sm text-button2">{label}</label>
+      <div className="flex items-center rounded-lg gap-3 h-[46px] bg-glass-gradient2 border border-white/10" 
+      >
+        <div className="relative bg-transparent">
           <button
             type="button"
-            className="w-16 flex items-center gap-3 text-white hover:opacity-80 px-3 py-3"
+            className="w-16 flex items-center gap-3 text-white hover:opacity-80 px-3 py-3 bg-transparent"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Image 
@@ -71,7 +72,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
               height={16}
               className='rounded-sm'
             />
-            <span className='rotate-90 text-[15px]'>{isOpen ? '<' : '>'}</span>
+            <span className='rotate-90 text-text2 bg-glass-gradient2'>{isOpen ? '<' : '>'}</span>
           </button>
           
           {isOpen && (
@@ -96,9 +97,9 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
           )}
         </div>
 
-        <div className='border-r border-white h-[50%] w-[2px] bg-white/10'></div>
+        <div className='border-r border-white-10 h-[50%] w-[2px] bg-white/10'></div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 bg-transparent">
           <input
             type="tel"
             value={phoneNumber}
@@ -106,7 +107,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
             onKeyDown={handleKeyPress}
             placeholder={placeholder}
             maxLength={10}
-            className={`w-full bg-transparent text-white py-3 pr-3 placeholder-gray-500 focus:outline-none ${className}`}
+            className={`w-full bg-transparent text-white py-3 pr-3 placeholder-white/50 focus:outline-none ${className} placeholder-text2 text-text2`}
             {...rest}
           />
         </div>
