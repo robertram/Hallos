@@ -40,7 +40,7 @@ const formatDate = (timestamp: string): string => {
 
 export const AccountTicket = ({ title, date, location, tickets }: AccountTicketProps) => {
   return (
-      <article className="bg-[#272727] text-white border border-white rounded-2xl w-[280px] md:max-w-sm">
+      <article className="bg-[#272727] text-white border-[1px] border-solid border-white rounded-2xl w-[280px] md:max-w-sm">
         <div className="px-4 py-6">
           <h3 className="text-text2 font-bold">{title}</h3>
           <div className="flex items-center mt-1">
@@ -56,7 +56,7 @@ export const AccountTicket = ({ title, date, location, tickets }: AccountTicketP
             </p>
           </div>
           
-          <div className="border-b border-white my-4"></div>
+          <div className="border-b-[1px] border-solid border-white my-4"></div>
           
           <div>
             <p className="text-h5 text-[#BEBEBE] mb-2">Your tickets ({tickets.length})</p>
