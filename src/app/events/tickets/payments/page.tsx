@@ -20,6 +20,7 @@ const PaymentsPage = () => {
     onSubmit={(formValues) => {
       console.log(formValues);
     }}
+    isMainTitle={false}
   />
     </>
   )

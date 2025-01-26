@@ -16,9 +16,10 @@ interface CustomFormProps {
   title: string;
   fields: FormField[];
   onSubmit?: (values: Record<string, string>) => void;
+  isMainTitle?: boolean;
 }
 
-const CustomForm: React.FC<CustomFormProps> = ({ title, fields, onSubmit }) => {
+const CustomForm: React.FC<CustomFormProps> = ({ title, fields, onSubmit, isMainTitle = true }) => {
   const [formValues, setFormValues] = React.useState<Record<string, string>>({});
 
   const handleChange = (id: string, value: string) => {
@@ -96,7 +97,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ title, fields, onSubmit }) => {
 
   return (
     <div className="w-full max-w-2xl my-4 mx-auto">
-      <h2 className="text-white text-2xl font-semibold mb-6">{title}</h2>
+      <h2 className={`${isMainTitle ? 'text-h3' : 'text-h4'} font-semibold mb-6 text-white`}>{title}</h2>
       <div className="space-y-6">
         {rows.map((row, rowIndex) => (
           <div 
