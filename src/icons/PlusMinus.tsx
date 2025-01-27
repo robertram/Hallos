@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
 interface PlusMinusProps {
-  isPlus: boolean
+  isPlus?: boolean
   styles?: string
 }
 
-const PlusMinus: FC<PlusMinusProps> = ({ isPlus, styles }) => {
+const PlusMinus: FC<PlusMinusProps> = ({ isPlus = false, styles }) => {
   const height = isPlus ? '100%' : '0%'
 
   return (
