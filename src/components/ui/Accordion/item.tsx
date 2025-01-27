@@ -1,39 +1,38 @@
 import { FC, ReactElement } from 'react'
-import { Arrow } from '@/icons'
+import { PlusMinus } from '@/icons'
 import { FAQ } from '@/types/faq.type'
 
 type Props = {
   faq: FAQ
   focus: boolean
   onClick: () => void
+  isLastElement?: boolean
 }
 
-export const ItemAccordion: FC<Props> = ({ faq, focus, onClick }): ReactElement => {
+export const ItemAccordion: FC<Props> = ({ faq, focus, onClick, isLastElement }): ReactElement => {
   return (
     <button
-      className={`flex flex-col items-left flex-wrap p-5 max-w-2xl text-left
-        bg-glass-gradient rounded-xl border-solid border border-white-10 w-full
-        transition-[gap] duration-500 ease-in-out
-        ${focus ? 'gap-3' : 'gap-0'}
+      className={`flex flex-col items-left flex-wrap px-5 py-7 max-w-2xl text-left
+        bg-glass-gradient border-solid border-white-10 w-full
+        ${isLastElement ? 'border-0' : 'border-b-2'}
       `}
       onClick={onClick}
     >
       <div className='flex justify-between w-full'>
-        <h3 className='text-base font-bold max-w-[88%]'>{ faq.title }</h3>
+        <h3 className='max-w-[88%] text-h4'>{ faq.title }</h3>
 
-        <Arrow className={`transform transition-transform duration-500 pt-1
-            ${focus ? 'translate-y-0.5' : 'rotate-180'}
-          `}
-        />
+        <PlusMinus isPlus={!focus} styles='min-w-4 max-h-4' />
       </div>
 
-      <p className={`text-sm text-[#BEBEBE] mt-1 overflow-hidden
+      <div className={`overflow-hidden
           transition-all duration-500
           ${focus ? 'max-h-32 ease-in' : 'max-h-0 ease-in-out'}
         `}
       >
-        { faq.description }
-      </p>
+        <p className='text-text1 text-[#BEBEBE] pt-4'>
+          { faq.description }
+        </p>
+      </div>
     </button>
   )
 }

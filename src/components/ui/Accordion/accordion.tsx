@@ -16,7 +16,7 @@ export const Accordion: FC<AccordionProps> = ({ faqs }) => {
 
   return (
     <div 
-      className={`flex flex-col gap-y-4 transition-all
+      className={`flex flex-col transition-all
         duration-500 pb-10 overflow-hidden h-[620px] md:h-[520px]
       `}
     >
@@ -27,6 +27,7 @@ export const Accordion: FC<AccordionProps> = ({ faqs }) => {
             focus={accordionItemSelected === i}
             onClick={() => toggle(i)}
             key={`item-accordion-${i}`}
+            isLastElement={(i + 1) === faqs.length}
           />
         ))
       }
