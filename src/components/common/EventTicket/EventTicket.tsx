@@ -1,37 +1,28 @@
+type EventTicketProps = {
+  name: string;
+  image: string;
+  tooltipInfo?: string; // Agregamos la propiedad opcional para el tooltip
+};
 
-
-import { Tooltip, TooltipContent, TooltipTrigger } from "@radix-ui/react-tooltip";
-import Image from "next/image";
-
-interface EventTicketProps {
-    name: string;
-    image: string;
-    tooltipInfo: string; 
-}
-
-export const EventTicket = ({ name, image, tooltipInfo }: EventTicketProps) => {
+export const EventTicket = ({ name, tooltipInfo }: EventTicketProps) => {
   return (
-    <div className="flex items-center gap-4 bg-[#272727] text-white border border-[#3B3B3B] rounded-xl p-4 w-[280px] md:max-w-sm">
-      {/* Image with Tooltip */}
-      <Tooltip>
-        <TooltipTrigger>
-          <div className="relative w-16 h-16">
-            <Image
-              src={image}
-              alt={name}
-              fill
-              className="rounded-md object-cover"
-              sizes="64px"
-            />
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p className="text-sm">{tooltipInfo}</p>
-        </TooltipContent>
-      </Tooltip>
+    <div 
+      className="bg-black text-white rounded-lg shadow-md w-40 p-2 flex flex-col items-center border-2 border-gray-300" // Añadido border
+      title={tooltipInfo} // Tooltip agregado
+    >
+      {/* Imagen dinámica */}
+      <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden">
+        <img
+          src={"https://37cab6b984fd76206e94c796d0b1a00c.ipfscdn.io/ipfs/bafybeic3mambq274fafn2o4hcb4swdzm7ntezh2zlfoa644sxfll6ifb54/1.png"} // Cambié la URL a la variable image
+          alt="Ticket Visual"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-      {/* Ticket name */}
-      <span className="font-medium text-base">{name}</span>
+      {/* Nombre del ticket */}
+      <div className="mt-2 text-center">
+        <p className="text-sm font-medium">{name}</p>
+      </div>
     </div>
   );
 };
