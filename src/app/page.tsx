@@ -1,38 +1,44 @@
 import Button from "@/components/common/Button/Button";
 import { EventCard } from "@/components/common/EventCard/EventCard";
+import { EventTicket } from "@/components/common/EventTicket/EventTicket"; // Importamos el componente EventTicket
 import SearchBar from "@/components/common/SearchBar/SearchBar";
 import { fullGridEvents } from "@/utils/events";
-//oneEvent
 
 export default function Home() {
   const events = fullGridEvents;
 
+  // Datos del ticket
+  const ticketData = {
+    name: "Name of the ticket",
+    image: "https://google.com/testimage.png", // Asegúrate de que la imagen esté disponible
+    tooltipInfo: "This ticket is a digital collectible", // Tooltip agregado
+  };
+
   return (
     <div className="flex flex-col items-center px-[15px]">
-
-      {/* <Breadcrumbs /> */}
-
+      {/* Header */}
       <h1 className="text-h2 mb-[33px]">Explore events</h1>
 
+      {/* Search Bar */}
       <SearchBar
         type="secondary"
         placeholder="Search event"
-        categoryOptions={[
-          'Music',
-          'Blockchain',
-          'Sports'
-        ]}
+        categoryOptions={["Music", "Blockchain", "Sports"]}
       />
 
+      {/* Upcoming Events Section */}
       <div className="mt-[50px] w-full">
         <div className="flex justify-between mb-[30px] w-full">
           <h2 className="text-h3 !my-auto">Upcoming events</h2>
 
           <div>
-            <Button type="glass" icon="Filter">All filters</Button>
+            <Button type="glass" icon="Filter">
+              All filters
+            </Button>
           </div>
         </div>
 
+        {/* Event Cards */}
         <div className="flex flex-wrap">
           {events.map((event, index) => (
             <div className="p-2" key={index}>
@@ -53,9 +59,16 @@ export default function Home() {
 
           <Button type="light">View past events</Button>
         </div>
-
       </div>
 
+      {/* Ticket Section */}
+      <div className="mt-[50px] w-full flex justify-center items-center">
+        <EventTicket
+          name={ticketData.name}
+          image={ticketData.image}
+          tooltipInfo={ticketData.tooltipInfo} // Se pasa tooltipInfo al componente
+        />
+      </div>
     </div>
   );
 }
