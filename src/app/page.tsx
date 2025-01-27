@@ -66,7 +66,7 @@ export default function Home() {
         <EventTicket
           name={ticketData.name}
           image={ticketData.image}
-          tooltipInfo={ticketData.tooltipInfo} // Se pasa tooltipInfo al componente
+          tooltipInfo={ticketData.tooltipInfo}
         />
       </div>
     </div>
