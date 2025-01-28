@@ -2,7 +2,10 @@ import Button from "@/components/common/Button/Button";
 import { EventCard } from "@/components/common/EventCard/EventCard";
 import { EventTicket } from "@/components/common/EventTicket/EventTicket"; // Importamos el componente EventTicket
 import SearchBar from "@/components/common/SearchBar/SearchBar";
+import { Accordion } from "@/components/ui/Accordion/accordion";
 import { fullGridEvents } from "@/utils/events";
+import { FAQs } from "@/utils/faqs";
+//oneEvent
 
 export default function Home() {
   const events = fullGridEvents;
@@ -69,6 +72,7 @@ export default function Home() {
           tooltipInfo={ticketData.tooltipInfo}
         />
       </div>
+      <Accordion faqs={FAQs}/>
     </div>
   );
 }
