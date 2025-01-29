@@ -28,13 +28,16 @@ const QRCodeComponent: React.FC<QRCodeComponentProps> = ({ address, contractAddr
   }, [address, contractAddress, tokenId, selectedTicketId]);
 
   return (
-    <div>
-      <QRCode
-        size={256}
-        style={{ height: 'auto', maxWidth: 'auto', width: '100%' }}
-        value={hash}
-        viewBox={`0 0 256 256`}
-      />
+    <div className="relative w-64 h-64 p-3 rounded-3xl bg-gradient-to-br to-[#E24DEB] via-[#7A65FD] from-[#0D80FF]">
+      <div className="absolute inset-0 rounded-3xl" />
+      <div className="relative h-full w-full flex items-center justify-center p-6 bg-white rounded-2xl">
+        <QRCode
+          size={256}
+          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+          value={hash}
+          bgColor="#FFFFFF"
+        />
+      </div>
     </div>
   );
 };
