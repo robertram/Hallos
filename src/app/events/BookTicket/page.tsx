@@ -1,24 +1,16 @@
 'use client';
 
-import { useParams } from "next/navigation";
 import EventDetails from "@/components/common/EventDetails/EventDetails";
 
 export default function EventDetailsPage() {
-  const { slug } = useParams() as { slug?: string };
-  const safeSlug = slug ?? "";
-
-  const formattedSlug = Array.isArray(safeSlug) ? safeSlug[0] : safeSlug;
-  const eventTitle = formattedSlug.replace("-", " ").toUpperCase();
-
-  // Simulación de datos de evento
   const eventData = {
-    title: eventTitle,
+    title: "Blockchain Summit",
     date: "March 15, 2024",
     location: "Sydney, Australia",
-    soldOut: formattedSlug === "exclusive-tech-conference",
+    soldOut: true,
     organizer: {
       name: "Gold.D.Roger",
-      avatar: "https://i.imgur.com/O0YvQzP.png",
+      avatar: "GoldRogerProfile2.png",
       location: "Sydney, Australia"
     }
   };
