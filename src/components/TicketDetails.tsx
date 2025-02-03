@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  CalendarIcon,
-  MapPinIcon,
-  QrCodeIcon,
-  CalendarDaysIcon,
-  MessageSquareIcon,
-  ArrowRightIcon,
-} from "lucide-react";
-import { Calendar } from "@/icons"
+import { Calendar2, Location2 } from "@/icons";
+import { Calendar } from "@/icons";
 import { Button } from "../components/common/Button/Button";
 import Image from "next/image";
 import type { Event } from "@/types/event.type";
@@ -46,9 +39,9 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
           <span>Tickets</span>
         </nav>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-16 ">
           {/* Left Column - Ticket Image Card */}
-          <div className="flex flex-col rounded-3xl overflow-hidden bg-[#12142B]">
+          <div className="flex flex-col rounded-3xl overflow-hidden bg-[#12142B] border border-gray-800">
             <div className="flex-grow relative">
               <Image
                 src={ticket.image || "/placeholder.svg"}
@@ -58,20 +51,20 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
                 priority
               />
             </div>
-            <div className="grid grid-cols-2 divide-x divide-white/10">
+            <div className="flex w-full border-t border-gray-800">
               <Button
-                variant="ghost"
-                className="rounded-none h-[72px] w-full bg-black/40 hover:bg-black/60 text-white border-none inline-flex items-center justify-center gap-2 text-base font-normal"
+                type="glass"
+                icon="QrCode"
+                className="flex-1 rounded-none h-[72px] w-full bg-black/40 hover:bg-black/60 text-white border-t-none border-b-none border-l-none border-r border-b-gray-800 inline-flex items-center justify-center gap-2 text-base font-normal"
               >
-                <QrCodeIcon className="w-5 h-5" />
-                <span>See QR Code</span>
+                See QR Code
               </Button>
               <Button
-                variant="ghost"
-                className="rounded-none h-[72px] w-full bg-black/40 hover:bg-black/60 text-white border-none inline-flex items-center justify-center gap-2 text-base font-normal"
+                type="glass"
+                icon="Calendar"
+                className="flex-1 rounded-none h-[72px] w-full bg-black/40 hover:bg-black/60 text-white  border-none inline-flex items-center justify-center gap-2 text-base font-normal"
               >
-                <Calendar className="w-5 h-5" />
-                <span>Add to calendar</span>
+                Add to calendar
               </Button>
             </div>
           </div>
@@ -101,7 +94,7 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-400">
                 <div className="w-6 h-6 rounded-full bg-[#4461F2]/20 flex items-center justify-center">
-                  <CalendarIcon className="w-4 h-4 text-[#4461F2]" />
+                  <Calendar2 />
                 </div>
                 <span className="text-lg">
                   January 25 · 11pm - January 26 · 4am EST
@@ -109,7 +102,7 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <div className="w-6 h-6 rounded-full bg-[#4461F2]/20 flex items-center justify-center">
-                  <MapPinIcon className="w-4 h-4 text-[#4461F2]" />
+                  <Location2 />
                 </div>
                 <span className="text-lg">{ticket.location}</span>
               </div>
@@ -118,15 +111,19 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
             {/* Action Buttons */}
             <div className="flex gap-3 pt-4">
               <Button
-                className="flex-1 bg-[#4461F2] hover:bg-[#4461F2]/90 text-white h-14 text-base font-normal rounded-2xl gap-2 border border-gray-500 flex items-center justify-center"
-                icon={<MessageSquareIcon className="w-4 h-4" />}
+                className="bg-gradient-to-r from-[#1A82FE] to-[#A14BFC] text-white h-14 text-base font-normal rounded-2xl gap-2 border border-gray-500 flex items-center justify-center"
+                icon="Chat"
               >
                 Event Chat
               </Button>
               <Button
-                variant="outline"
-                className="flex-1 bg-black/25 text-white hover:bg-white/5 h-14 text-base font-normal rounded-2xl inline-flex items-center justify-center gap-2 border-gray-500"
-                icon={<ArrowRightIcon className="w-4 h-4" />}
+                type="glass"
+                icon="Swap" // Asumiendo que tienes un ícono "transfer" en tu objeto Icons
+                className=" !rounded-full bg-black/20 hover:bg-black/30 border border-white/10 !px-6 !py-4 flex items-center justify-center gap-3 transition-all"
+                onClick={() => {
+                  // Manejar la transferencia del ticket
+                  console.log("Transfer ticket clicked");
+                }}
               >
                 Transfer Ticket
               </Button>
@@ -152,6 +149,28 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto px-24 pb-24">
+        <div className="rounded-2xl overflow-hidden border border-white/20">
+          <div className="bg-gradient-to-r from-[#1A82FE] to-[#A14BFC] p-2">
+            <h2 className="text-base font-medium text-white">
+              Exclusive Content for ticket owners
+            </h2>
+          </div>
+          <div className="bg-gradient-to-b from-[#1A82FE]/30 to-[#A14BFC]/30 backdrop-blur-sm p-6">
+            <p className="text-gray-400 leading-relaxed">
+              Curabitur interdum pulvinar conubia aliquet mus. Eleifend lorem
+              laoreet litora nam aenean nec. Accumsan feugiat sollicitudin ac
+              non sodales maximus dictum. Eget ad sociosqu lectus hendrerit erat
+              proin? Quisque commodo pharetra habitant ultricies imperdiet eget
+              felis. Aliquet ipsum ad rhoncus ridiculus elementum laoreet.
+              Turpis elementum gravida vivamus rutrum orci; taciti ultrices
+              lobortis sem. Mi aenean vitae turpis egestas potenti libero
+              efficitur. Torquent ad suspendisse tempus imperdiet sociosqu.
+              Lacinia nunc varius suscipit viverra mi ac cubilia consectetur.
+            </p>
           </div>
         </div>
       </div>
