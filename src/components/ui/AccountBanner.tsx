@@ -14,7 +14,7 @@ export default function UserProfile({
     socialMedia,
 }: UserData) {
     return (
-        <div className="w-[100%] h-full flex flex-col text-white p-4 rounded-lg gap-10">
+        <article className="w-full h-full flex flex-col text-white p-4 rounded-lg gap-10">
             <div className="w-full relative">
                 <Image
                     src={bannerImage || "/images/BannerAccount.png"}
@@ -58,37 +58,38 @@ export default function UserProfile({
                         )}
                     </div>
                 )}
-                
             </div>
 
-            <div className="flex gap-8 w-full">
-                <Image
-                    src={profilePicture || "/images/ProfilePlaceholder.png"}
-                    alt="Profile Picture"
-                    width={180}
-                    height={10}
-                    className="rounded-full border-4 border-[#0D0D0D]"
-                />
+            <section className="flex gap-8 w-full">
+                <figure className="shrink-0">
+                    <Image
+                        src={profilePicture || "/images/ProfilePlaceholder.png"}
+                        alt="Profile Picture"
+                        width={180}
+                        height={180}
+                        className="rounded-full border-4 border-[#0D0D0D]"
+                    />
+                </figure>
 
                 <div className="flex gap-2 flex-col w-[90%]">
                     <div className="flex justify-between">
-                        <h2 className="flex justify-center gap-4 items-center text-2xl font-semibold mt-2 text-white">
+                        <h1 className="flex justify-center gap-4 items-center text-2xl font-semibold mt-2 text-white">
                             {name} {lastName}
                             <Image
                                 src="/images/verified.png"
                                 alt="Verified Icon"
                                 width={28}
-                                height={4}
+                                height={28}
                             />
-                        </h2>
+                        </h1>
                         <Button icon="FaPen" className="w-32 flex items-center gap-2" type="outline">
-                           Edit profile
+                            Edit profile
                         </Button>
                     </div>
-                    <p className="text-[#A4A7AE]">{email}</p>
+                    <address className="text-[#A4A7AE] not-italic">{email}</address>
                     <p className="text-sm text-[#A4A7AE] w-full mt-2">{bio}</p>
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     );
 }
