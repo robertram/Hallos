@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { UserData } from "@/types/banner.type";
 import Button from "../common/Button/Button";
-import { FaPen, FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa6";
+import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa6";
 
 export default function UserProfile({
     id,
@@ -58,6 +58,7 @@ export default function UserProfile({
                         )}
                     </div>
                 )}
+                
             </div>
 
             <div className="flex gap-8 w-full">
@@ -80,8 +81,8 @@ export default function UserProfile({
                                 height={4}
                             />
                         </h2>
-                        <Button className="w-32 flex items-center gap-2" type="outline">
-                            <FaPen /> Edit profile
+                        <Button icon="FaPen" className="w-32 flex items-center gap-2" type="outline">
+                           Edit profile
                         </Button>
                     </div>
                     <p className="text-[#A4A7AE]">{email}</p>
