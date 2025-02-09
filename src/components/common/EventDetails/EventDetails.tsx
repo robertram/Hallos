@@ -63,7 +63,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
       </div>
 
       {/* ✅ Visible ONLY on Medium and Large Screens */}
-      <div className="hidden sm:block bg-[#171717] text-white shadow-lg border border-[#262626] mx-auto p-4 rounded-xl w-[378px] min-h-[721px]">
+      <div className="hidden sm:block bg-[#171717] text-white shadow-lg border border-[#262626] p-4 rounded-xl w-[378px] min-h-[721px]">
         
         {/* ✅ Sold Out Message */}
         <div className="p-4 flex flex-col gap-4 relative">

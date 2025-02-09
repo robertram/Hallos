@@ -16,7 +16,7 @@ export const Accordion: FC<AccordionProps> = ({ faqs }) => {
 
   return (
     <div 
-      className={`flex flex-col transition-all
+      className={`flex flex-col transition-all w-full
         duration-500 pb-10 overflow-hidden h-[620px] md:h-[520px]
       `}
     >
