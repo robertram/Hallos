@@ -35,7 +35,7 @@ export default function EventDetailsPage({ params }: PageProps) {
   const tickets = [
     {
       image: "https://37cab6b984fd76206e94c796d0b1a00c.ipfscdn.io/ipfs/bafybeic3mambq274fafn2o4hcb4swdzm7ntezh2zlfoa644sxfll6ifb54/1.png",
-      name: "Name of the ticket",
+      name: "Name of the ticket Name of the ticket Name of the ticket",
       tooltipInfo: "This ticket is a digital collectible"
     },
     {
@@ -73,8 +73,8 @@ export default function EventDetailsPage({ params }: PageProps) {
                 Everyone no Cover At Taj NYC #1 Urban Night Party
               </h2>
               <div className="my-[30px] flex flex-col gap-[20px]">
-                <DateTime startDate={startDate} endDate={endDate} timezone="EST" />
-                <DateTime startDate={startDate} endDate={endDate} timezone="EST" />
+                <DateTime title="Date & Time" startDate={startDate} endDate={endDate} timezone="EST" icon="date" />
+                <DateTime title="Location" value="48 West 21st Street New York, NY 10010 United States" icon="location" />
               </div>
             </div>
 

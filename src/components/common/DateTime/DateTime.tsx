@@ -1,12 +1,16 @@
-import { Clock } from "lucide-react"
+import { Clock } from "@/icons"
+import { EventDetLocation } from "@/icons"
 
 interface DateTimeProps {
-  startDate: Date
-  endDate: Date
+  title: string
+  startDate?: Date
+  endDate?: Date
   timezone?: string
+  icon: "location" | "date"
+  value?: string
 }
 
-export default function DateTime({ startDate, endDate, timezone = "EST" }: DateTimeProps) {
+export default function DateTime({ title, startDate, endDate, timezone = "EST", icon, value }: DateTimeProps) {
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {
       month: "long",
@@ -17,19 +21,24 @@ export default function DateTime({ startDate, endDate, timezone = "EST" }: DateT
     }).format(date)
   }
 
-  const [startFormatted, endFormatted] = [formatDate(startDate), formatDate(endDate)]
+  const startFormatted = startDate ? formatDate(startDate) : '';
+  const endFormatted = endDate ? formatDate(endDate) : '';
 
   return (
     <div className="rounded-lg">
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-4">
-          <div className="rounded-full bg-violet-600 p-4">
-            <Clock className="h-6 w-6 text-white" />
+          <div className="rounded-full bg-gradient-to-b from-gray-900 to-gray-900/10 opacity-12 p-4 border-[#FFFFFF]/10 border-[1px] border-solid">
+            {icon === "date" ? (
+              <Clock className="h-6 w-6 text-white" />
+            ) : (
+              <EventDetLocation />
+            )}
           </div>
           <div>
-            <h2 className="text-zinc-400 text-text2">Date & Time</h2>
+            <h2 className="text-zinc-400 text-text2">{title}</h2>
             <p className="text-white text-h5 font-medium">
-              {startFormatted} - {endFormatted} {timezone}
+              {value ? value : `${startFormatted} - ${endFormatted} ${timezone}`}
             </p>
           </div>
         </div>
