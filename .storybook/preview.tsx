@@ -22,13 +22,21 @@ const preview: Preview = {
       },
     },
   },
+  // decorators: [
+  //   Story => (
+  //     <main className={`${geist.className}`}>
+  //       <Story />
+  //     </main>
+  //   )
+  // ]
+
   decorators: [
-    Story => (
-      <main className={`${geist.className}`}>
-        <Story />
-      </main>
-    )
-  ]
+  (Story) => (
+    <div style={{ margin: '3em' }}>
+      <Story />
+    </div>
+  )
+]
 };
 
 export default preview;
