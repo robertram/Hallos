@@ -40,11 +40,13 @@ export default function Home() {
           tickets={[
             {
               title: "NIGHT PARTY Red",
-              image: "/nightParty1.png" 
+              image: "/nightParty1.png",
+              qrCodeUrl: "/qrCode.png"
             },
             {
               title: "NIGHT PARTY Yellow",
-              image: "/nightParty2.png"
+              image: "/nightParty2.png",
+              qrCodeUrl: "qrCode.png"
             }
           ]}
         />
