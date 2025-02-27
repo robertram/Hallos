@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-Regular.otf") format("opentype");
+	font-weight: 100 900;
+	font-display: swap;
+  }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -115,6 +122,21 @@ body {
 		--chart-3: 30 80% 55%;
 		--chart-4: 280 65% 60%;
 		--chart-5: 340 75% 55%;
+	}
+
+	.text-inter {
+		font-family: "Inter", sans-serif;
+	}
+
+	.view-on-hallo-btn {
+		background: linear-gradient(90deg, #1A82FE 0%, #A14BFC 100%);
+		border-radius: 1.2rem;
+		width: 85%;
+		margin-left: 7.5%;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
 

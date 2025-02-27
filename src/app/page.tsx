@@ -6,6 +6,7 @@ import { AccountTicket } from "@/components/common/AccountTicket/AccountTicket";
 import { Accordion } from "@/components/ui/Accordion/accordion";
 import { fullGridEvents } from "@/utils/events";
 import { FAQs } from "@/utils/faqs";
+
 //oneEvent
 
 export default function Home() {

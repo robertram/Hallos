@@ -1,25 +1,53 @@
 import type { StorybookConfig } from "@storybook/nextjs";
-import '../src/app/globals.css; // Import TailwindCSS or other global styles
 
 const config: StorybookConfig = {
-  // stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "@storybook/addon-onboarding",
-    '@storybook/addon-links',
+    "@storybook/addon-docs",
     "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-links",
+    "@storybook/addon-styling-webpack",
   ],
-  framework: {
-    name: "@storybook/nextjs",
-    options: {},
+  framework: "@storybook/nextjs",
+  docs: {
+    autodocs: "tag",
+    defaultName: "Documentation",
   },
-  core: {
-    builder: 'webpack5', // Use Webpack 5 (default for Storybook 6+)
-  },
-  staticDirs: ["../public"],
 };
+
 export default config;
+
+
+
+
+
+// import type { StorybookConfig } from '@storybook/nextjs';
+
+// const config: StorybookConfig = {
+//   "stories": [
+//     "../src/**/*.mdx",
+//     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)"
+//   ],
+//   "addons": [
+//     {
+//       "name": "@storybook/addon-essentials",
+//       "options": {
+//         "docs": false
+//       }
+//     },
+//     "@storybook/addon-onboarding",
+//     "@chromatic-com/storybook",
+//     "@storybook/addon-interactions",
+//     '@storybook/addon-links',
+//     '@storybook/addon-essentials',
+//   ],
+//   "framework": {
+//     "name": "@storybook/nextjs",
+//     "options": {}
+//   },
+//   "staticDirs": [
+//     "..\\public"
+//   ]
+// };
+// export default config;
