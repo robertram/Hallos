@@ -6,6 +6,7 @@ import { AccountTicket } from "@/components/common/AccountTicket/AccountTicket";
 import { Accordion } from "@/components/ui/Accordion/accordion";
 import { fullGridEvents } from "@/utils/events";
 import { FAQs } from "@/utils/faqs";
+
 //oneEvent
 
 export default function Home() {
@@ -40,11 +41,13 @@ export default function Home() {
           tickets={[
             {
               title: "NIGHT PARTY Red",
-              image: "/nightParty1.png" 
+              image: "/nightParty1.png",
+              qrCodeUrl: "/qrCode.png"
             },
             {
               title: "NIGHT PARTY Yellow",
-              image: "/nightParty2.png"
+              image: "/nightParty2.png",
+              qrCodeUrl: "qrCode.png"
             }
           ]}
         />
