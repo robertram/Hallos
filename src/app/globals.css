@@ -135,4 +135,15 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+.gradient-bg{
+	background: linear-gradient(90deg, rgba(26, 130, 254, 0.06) 0%, rgba(161, 75, 252, 0.06) 100%);
+}
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+	}
+  body {
+    @apply bg-background text-foreground;
+	}
+}
