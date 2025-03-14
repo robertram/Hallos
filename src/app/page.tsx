@@ -33,22 +33,6 @@ export default function Home() {
 
       {/* Upcoming Events Section */}
       <div className="mt-[50px] w-full">
-      <AccountTicket 
-          title="Everyone no Cover At Taj NYC #1 Urban Night Party"
-          date="1711051200000"
-          location="21st Street New York, United States"
-          tickets={[
-            {
-              title: "NIGHT PARTY Red",
-              image: "/nightParty1.png" 
-            },
-            {
-              title: "NIGHT PARTY Yellow",
-              image: "/nightParty2.png"
-            }
-          ]}
-        />
-        
         <div className="flex justify-between mb-[30px] w-full">
           <h2 className="text-h3 !my-auto">Upcoming events</h2>
 
@@ -82,14 +66,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Ticket Section */}
-      <div className="mt-[50px] w-full flex justify-center items-center">
-        <EventTicket
-          name={ticketData.name}
-          image={ticketData.image}
-          tooltipInfo={ticketData.tooltipInfo}
-        />
-      </div>
       <Accordion faqs={FAQs}/>
     </div>
   );

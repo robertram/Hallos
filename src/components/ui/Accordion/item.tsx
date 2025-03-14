@@ -12,7 +12,7 @@ type Props = {
 export const ItemAccordion: FC<Props> = ({ faq, focus, onClick, isLastElement }): ReactElement => {
   return (
     <button
-      className={`flex flex-col items-left flex-wrap px-5 py-7 max-w-2xl text-left
+      className={`flex flex-col items-left flex-wrap px-5 py-7  text-left
         bg-glass-gradient border-solid border-white-10 w-full
         ${isLastElement ? 'border-0' : 'border-b-2'}
       `}
