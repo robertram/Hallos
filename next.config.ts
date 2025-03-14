@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["firebasestorage.googleapis.com"],
+    domains: ['flagcdn.com', "firebasestorage.googleapis.com"],
   },
 };
 

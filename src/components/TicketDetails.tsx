@@ -6,6 +6,17 @@ import { Button } from "../components/common/Button/Button";
 import Image from "next/image";
 import type { Event } from "@/types/event.type";
 import Link from "next/link";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { PushChat } from "./PushChat";
+import { useState } from "react";
 
 interface TicketDetailsProps {
   event: Event;
@@ -13,10 +24,11 @@ interface TicketDetailsProps {
 }
 
 export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
+  const [isDialogOpen, setIsDialogOpen] = useState(true);
+
   const ticket = {
     date: "1736428800000",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fd59be41c-9e7d-4daf-b48a-c0830ab31492%2FBanner-da5fc65d-4c8d-4186-8c5b-22d02b0ddae0?alt=media&token=a064e42c-e676-4adf-a78b-5a7b4c216b56", // Usando la imagen proporcionada
+    image: "https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fd59be41c-9e7d-4daf-b48a-c0830ab31492%2FBanner-da5fc65d-4c8d-4186-8c5b-22d02b0ddae0?alt=media&token=a064e42c-e676-4adf-a78b-5a7b4c216b56", // Usando la imagen proporcionada
     location: "48 West 21st Street New York, NY 10010 United States",
     title: "Everyone no Cover At Taj NYC #1 Urban Night Party",
     description:
@@ -25,7 +37,7 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0B1E] bg-gradient-to-b from-[#0A0B1E] to-[#070812] text-white">
+    <div className="min-h-screen bg-transparent text-white">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-12">
           <Link href="/" className="hover:text-gray-400">
@@ -39,13 +51,13 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
           <span>Tickets</span>
         </nav>
 
-        <div className="grid lg:grid-cols-2 gap-16 ">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column - Ticket Image Card */}
           <div className="flex flex-col rounded-3xl overflow-hidden bg-[#12142B] border border-gray-800">
             <div className="flex-grow relative">
               <Image
-                src={ticket.image || "/placeholder.svg"}
-                alt={ticket.title}
+                src={ticket?.image || "/placeholder.svg"}
+                alt={ticket?.title}
                 fill
                 className="object-cover"
                 priority
@@ -110,12 +122,43 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
 
             {/* Action Buttons */}
             <div className="flex gap-3 pt-4">
-              <Button
-                className="bg-gradient-to-r from-[#1A82FE] to-[#A14BFC] text-white h-14 text-base font-normal rounded-2xl gap-2 border border-gray-500 flex items-center justify-center"
-                icon="Chat"
-              >
-                Event Chat
-              </Button>
+              <Dialog open={isDialogOpen} >
+                <DialogTrigger asChild>
+                  <Button
+                    className="bg-gradient-to-r from-[#1A82FE] to-[#A14BFC] text-white h-14 text-base font-normal rounded-2xl gap-2 border border-gray-500 flex items-center justify-center"
+                    icon="Chat"
+                    onClick={() => {
+                      setIsDialogOpen(true);
+                    }}
+                  >
+                    Event Chat
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-none h-[70%] w-[80%] bg-black border-gray-500 flex flex-col" hideCloseButton>
+                  <DialogHeader className="flex-none">
+                    <DialogTitle>Event Chat</DialogTitle>
+                    <DialogDescription>
+                      Join the conversation about the event here.
+                    </DialogDescription>
+                  </DialogHeader>
+                  {/* Add chat input or other content here */}
+
+                  <div className="flex-grow h-full">
+                    <PushChat />
+                  </div>
+
+                  <DialogFooter className="flex-none">
+                    <Button
+                      className="w-full h-min bg-pink-500"
+                      onClick={() => {
+                        setIsDialogOpen(false);
+                      }}
+                    >
+                      Close
+                    </Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
               <Button
                 type="glass"
                 icon="Swap" // Asumiendo que tienes un ícono "transfer" en tu objeto Icons
@@ -151,29 +194,35 @@ export function TicketDetails({ event, ticketId }: TicketDetailsProps) {
             </div>
           </div>
         </div>
-      </div>
-      <div className="mx-auto px-24 pb-24">
-        <div className="rounded-2xl overflow-hidden border border-white/20">
-          <div className="bg-gradient-to-r from-[#1A82FE] to-[#A14BFC] p-2">
-            <h2 className="text-base font-medium text-white">
-              Exclusive Content for ticket owners
-            </h2>
-          </div>
-          <div className="bg-gradient-to-b from-[#1A82FE]/30 to-[#A14BFC]/30 backdrop-blur-sm p-6">
-            <p className="text-gray-400 leading-relaxed">
-              Curabitur interdum pulvinar conubia aliquet mus. Eleifend lorem
-              laoreet litora nam aenean nec. Accumsan feugiat sollicitudin ac
-              non sodales maximus dictum. Eget ad sociosqu lectus hendrerit erat
-              proin? Quisque commodo pharetra habitant ultricies imperdiet eget
-              felis. Aliquet ipsum ad rhoncus ridiculus elementum laoreet.
-              Turpis elementum gravida vivamus rutrum orci; taciti ultrices
-              lobortis sem. Mi aenean vitae turpis egestas potenti libero
-              efficitur. Torquent ad suspendisse tempus imperdiet sociosqu.
-              Lacinia nunc varius suscipit viverra mi ac cubilia consectetur.
-            </p>
+
+        <div className="mx-auto pt-[25px]">
+          <div className="rounded-2xl overflow-hidden border border-white/20">
+            <div className="bg-gradient-to-r from-[#1A82FE] to-[#A14BFC] px-[20px] py-[10px]">
+              <h2 className="text-base font-medium text-white">
+                Exclusive Content for ticket owners
+              </h2>
+            </div>
+            <div className="bg-gradient-to-b from-[#1A82FE]/30 to-[#A14BFC]/30 backdrop-blur-sm p-6">
+              <p className="text-gray-400 leading-relaxed">
+                Curabitur interdum pulvinar conubia aliquet mus. Eleifend lorem
+                laoreet litora nam aenean nec. Accumsan feugiat sollicitudin ac
+                non sodales maximus dictum. Eget ad sociosqu lectus hendrerit erat
+                proin? Quisque commodo pharetra habitant ultricies imperdiet eget
+                felis. Aliquet ipsum ad rhoncus ridiculus elementum laoreet.
+                Turpis elementum gravida vivamus rutrum orci; taciti ultrices
+                lobortis sem. Mi aenean vitae turpis egestas potenti libero
+                efficitur. Torquent ad suspendisse tempus imperdiet sociosqu.
+                Lacinia nunc varius suscipit viverra mi ac cubilia consectetur.
+              </p>
+            </div>
           </div>
         </div>
+
+
+
+
       </div>
+
     </div>
   );
 }
