@@ -98,7 +98,7 @@ export const InteractiveCard: Story = {
         </CardContent>
         <CardFooter className="gap-2">
           <Button>Accept</Button>
-          <Button variant="outline">Cancel</Button>
+          <Button>Cancel</Button>
         </CardFooter>
       </>
     ),

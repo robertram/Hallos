@@ -3,19 +3,19 @@ import { fullGridEvents } from "@/utils/events"
 import { TicketDetails } from "@/components/TicketDetails"
 
 interface PageProps {
-  params: {
+  params: Promise<{
     eventId: string
     ticketId: string
-  }
+  }>
 }
 
-export default function TicketDetailsPage({ params }: PageProps) {
-
-  const event = fullGridEvents.find((e) => e.id.toString() === params.eventId)
+export default async function TicketDetailsPage({ params }: PageProps) {
+  const resolvedParams = await params; // Await the params promise
+  const event = fullGridEvents.find((e) => e.id.toString() === resolvedParams.eventId)
 
   if (!event) {
     notFound()
   }
 
-  return <TicketDetails event={event!} ticketId={params.ticketId} />
+  return <TicketDetails event={event!} ticketId={resolvedParams.ticketId} />
 }
