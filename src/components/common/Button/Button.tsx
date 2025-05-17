@@ -6,7 +6,8 @@ export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   icon?: string;
-  className?: string
+  className?: string;
+  href?: string;
 }
 
 const typeClasses: Record<string, string> = {
@@ -22,19 +23,34 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
   icon,
-  className
+  className,
+  href
 }) => {
 
   const IconComponent = icon && icon in Icons ? Icons[icon.charAt(0).toUpperCase() + icon.slice(1) as keyof typeof Icons] : null;
   const baseClasses = "text-button1 cursor-pointer text-center rounded-full w-[180px] min-h-[23] py-[15px] px-[30px] whitespace-nowrap";
   const appliedClasses = `${baseClasses} ${type ? typeClasses[type] : ''} ${IconComponent ? 'flex' : ''}`;
 
-  return (
-    <button className={`${appliedClasses} ${className}`} onClick={onClick}>
+  const content = (
+    <>
       {IconComponent && <IconComponent />}
       <span className={`${IconComponent ? 'ml-2 my-auto' : ''}`}>
         {children}
       </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a href={href} className={`${appliedClasses} ${className}`} onClick={onClick}>
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button className={`${appliedClasses} ${className}`} onClick={onClick}>
+      {content}
     </button>
   );
 };

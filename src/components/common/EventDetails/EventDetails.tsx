@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@/components/common/Button/Button";
 import Image from "next/image";
 import { EventDetLocation } from "@/icons";
+import Link from "next/link";
 
 interface EventDetailsProps {
   title: string;
@@ -88,7 +89,10 @@ const EventDetails: React.FC<EventDetailsProps> = ({
           <div className="flex justify-center items-center w-full mt-2">
             <Button
               type="primary"
-              className="w-full bg-gradient-to-r from-[#2343C2] to-[#8E2DE2] text-white rounded-full shadow-md text-lg font-semibold opacity-80"
+              className="w-full"
+              //className="w-full bg-gradient-to-r from-[#2343C2] to-[#8E2DE2] text-white rounded-full shadow-md text-lg font-semibold "
+              //opacity-80
+              href={'/event/vueltosUnColocho/checkout'}
             >
               <p className="text-white text-[18px] font-semibold leading-[18px] text-center">
                 Book Tickets
@@ -98,7 +102,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
         </div>
 
         {/* 🔹 Separator Line */}
-        <hr className="border-[1px] border-[#3A3A3A] border-solid"/>
+        <hr className="border-[1px] border-[#3A3A3A] border-solid" />
 
         {/* ✅ Organizer Section */}
         <div className="p-[20px]">
@@ -137,7 +141,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
         </div>
 
         {/* 🔹 Separator Line */}
-        <hr className="border-[1px] border-[#3A3A3A] border-solid"/>
+        <hr className="border-[1px] border-[#3A3A3A] border-solid" />
 
         {/* ✅ Social Networks Section */}
         <div className="p-[20px]">
@@ -162,7 +166,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
         </div>
 
         {/* 🔹 Separator Line */}
-        <hr className="border-[1px] border-[#3A3A3A] border-solid"/>
+        <hr className="border-[1px] border-[#3A3A3A] border-solid" />
 
         {/* ✅ Map View Section */}
         <div className="p-[20px]">

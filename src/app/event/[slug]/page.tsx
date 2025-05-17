@@ -3,7 +3,7 @@ import EventDetails from "@/components/common/EventDetails/EventDetails"
 import { EventTicket } from "@/components/common/EventTicket/EventTicket";
 import { Accordion } from "@/components/ui/Accordion/accordion";
 import { FAQs } from "@/utils/faqs";
-import DateTime from "@/components/common/DateTime/DateTime";
+import { EventTitleDate } from "@/components/common/EventTitleDate/EventTitleDate";
 
 interface PageProps {
   params: Promise<{
@@ -55,8 +55,8 @@ export default function EventDetailsPage({ params }: PageProps) {
       tooltipInfo: "Discounted price for early purchase"
     }
   ];
-  const startDate = new Date("2025-01-25T23:00:00")
-  const endDate = new Date("2025-01-26T04:00:00")
+  const startDate = "2025-01-25T23:00:00"
+  const endDate = "2025-01-26T04:00:00"
 
   return (
     <div className="mx-auto p-6">
@@ -67,17 +67,12 @@ export default function EventDetailsPage({ params }: PageProps) {
         />
         <div className="flex justify-between">
           <div>
-
-            <div>
-              <h2 className="text-h2">
-                Everyone no Cover At Taj NYC #1 Urban Night Party
-              </h2>
-              <div className="my-[30px] flex flex-col gap-[20px]">
-                <DateTime title="Date & Time" startDate={startDate} endDate={endDate} timezone="EST" icon="date" />
-                <DateTime title="Location" value="48 West 21st Street New York, NY 10010 United States" icon="location" />
-              </div>
-            </div>
-
+            <EventTitleDate
+              title="Everyone no Cover At Taj NYC #1 Urban Night Party"
+              startDate={startDate}
+              endDate={endDate}
+              location="48 West 21st Street New York, NY 10010 United States"
+            />
 
             <h3 className="text-h3 mb-[20px]">Description</h3>
             <p className="text-text1 opacity-80">

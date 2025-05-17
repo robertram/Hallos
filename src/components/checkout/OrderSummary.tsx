@@ -10,9 +10,10 @@ interface TicketSelection {
 interface OrderSummaryProps {
   tickets: Ticket[];
   selection: TicketSelection;
+  setStep?: (step: number | ((prev: number) => number)) => void;
 }
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ tickets, selection }) => {
+const OrderSummary: React.FC<OrderSummaryProps> = ({ tickets, selection, setStep }) => {
   const selectedTickets = tickets.filter((ticket) => selection[ticket.id] > 0);
   const subtotal = selectedTickets.reduce(
     (sum, ticket) => sum + ticket.price * selection[ticket.id],
@@ -113,7 +114,9 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ tickets, selection }) => {
           <span className="text-white font-medium">${total.toFixed(2)}</span>
         </div>
 
-        <Button type="primary" className="w-full">
+        <Button type="primary" className="w-full" onClick={() => {
+          setStep && setStep((step: number) => step + 1)
+        }}>
           Proceed to payment
         </Button>
       </div>

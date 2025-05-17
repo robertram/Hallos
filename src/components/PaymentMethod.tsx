@@ -7,8 +7,8 @@ const PaymentMethod = () => {
   const [selectedMethod, setSelectedMethod] = useState("crypto");
 
   return (
-    <div className="min-h-screen bg-[#0A0B0F] p-6">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen">
+      <div className=" mx-auto">
         <h2 className="text-2xl font-semibold mb-6 text-white">
           Select a payment method
         </h2>
