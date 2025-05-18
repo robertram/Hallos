@@ -4,17 +4,6 @@ import { tickets } from "@/constants/checkout";
 import CheckoutTicket from "@/components/checkout/CheckoutTicket";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import PaymentMethod from "@/components/PaymentMethod";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import Button from "@/components/common/Button/Button";
 import { EventTitleDate } from "@/components/common/EventTitleDate/EventTitleDate";
 
 export default function CheckoutPage() {
@@ -22,12 +11,11 @@ export default function CheckoutPage() {
     [ticketId: string]: number;
   }>({
     "1": 0,
-    "2": 1,
+    "2": 0,
     "3": 0,
   });
 
-
-  const [step, setStep]=useState(1)
+  const [step, setStep] = useState(1)
 
   const handleIncrement = (ticketId: string) => {
     setTicketSelection((prev) => ({
@@ -80,25 +68,7 @@ export default function CheckoutPage() {
             })()}
           </div>
         </div>
-
-        <div className="hidden lg:block">
-          <OrderSummary tickets={tickets} selection={ticketSelection} setStep={setStep} />
-        </div>
-        <div className="block lg:hidden w-full">
-          <Drawer>
-            <DrawerTrigger className="w-full">
-              <Button type="primary" className="w-full">
-                View order summary
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="bg-[#13131D] border-none">
-              <DrawerHeader>
-                <DrawerTitle></DrawerTitle>
-                <OrderSummary tickets={tickets} selection={ticketSelection} setStep={setStep} />
-              </DrawerHeader>
-            </DrawerContent>
-          </Drawer>
-        </div>
+        <OrderSummary tickets={tickets} selection={ticketSelection} setStep={setStep} />
       </div>
     </div>
   );

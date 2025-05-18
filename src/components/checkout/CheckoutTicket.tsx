@@ -40,7 +40,7 @@ const CheckoutTicket: React.FC<CheckoutTicketProps> = ({
 
         <hr className="border-white-10 mt-3" />
 
-        <div className="flex items-center justify-between  p-4">
+        <div className="flex items-center justify-between p-4 flex-wrap gap-2">
           <div className="text-[#A14BFC] font-medium">
             ${price.toFixed(2)}
             <span className="text-gray-400 text-xs">/Ticket</span>
