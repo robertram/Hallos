@@ -67,7 +67,7 @@ export const Navbar = () => {
   }
 
   return (
-    <header className="flex justify-between items-center px-4 py-[20px] h-full">
+    <header className="flex justify-between items-center px-[16px] py-[20px] h-full">
       <div className="flex">
         {/* Logo */}
         <div className="flex items-center mr-[35px]">

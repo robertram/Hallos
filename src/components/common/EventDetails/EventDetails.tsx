@@ -27,7 +27,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
   return (
     <>
       {/* ✅ Visible ONLY on Mobile Screens */}
-      <div className="block sm:hidden bg-[#171717] text-white shadow-lg border-t border-[#262626] p-2 rounded-t-xl w-full mt-[100px]">
+      <div className="z-30 fixed left-0 bottom-0 block sm:hidden bg-[#171717] text-white shadow-lg border-t border-[#262626] p-2 rounded-t-xl w-full mt-[100px]">
 
         {/* ✅ Sold Out Message */}
         <div className="p-2 flex flex-col gap-3 relative">
@@ -53,11 +53,23 @@ const EventDetails: React.FC<EventDetailsProps> = ({
 
           {/* ✅ Centered Booking Button */}
           <div className="flex justify-center">
-            <Button
+            {/* <Button
               type="primary"
-              className="w-full max-w-[280px] h-[42px] bg-gradient-to-r from-[#2343C2] to-[#8E2DE2] text-white rounded-full shadow-md text-md font-semibold mt-2 opacity-60"
+              //className="w-full max-w-[280px] h-[42px] bg-gradient-to-r from-[#2343C2] to-[#8E2DE2] text-white rounded-full shadow-md text-md font-semibold mt-2 opacity-60"
             >
               <p className="text-white text-[16px] font-semibold leading-[16px]">Book Tickets</p>
+            </Button> */}
+
+            <Button
+              type="primary"
+              className="w-full"
+              //className="w-full bg-gradient-to-r from-[#2343C2] to-[#8E2DE2] text-white rounded-full shadow-md text-lg font-semibold "
+              //opacity-80
+              href={'/event/vueltosUnColocho/checkout'}
+            >
+              <p className="text-white text-[18px] font-semibold leading-[18px] text-center">
+                Book Tickets
+              </p>
             </Button>
           </div>
         </div>

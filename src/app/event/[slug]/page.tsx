@@ -39,18 +39,18 @@ export default function EventDetailsPage({ params }: PageProps) {
       tooltipInfo: "This ticket is a digital collectible"
     },
     {
-      image: "https://example.com/ticket2.png",
+      image: "https://37cab6b984fd76206e94c796d0b1a00c.ipfscdn.io/ipfs/bafybeic3mambq274fafn2o4hcb4swdzm7ntezh2zlfoa644sxfll6ifb54/1.png",
       name: "VIP Ticket",
       tooltipInfo: "Access to VIP lounge"
     },
     {
-      image: "https://example.com/ticket3.png",
+      image: "https://37cab6b984fd76206e94c796d0b1a00c.ipfscdn.io/ipfs/bafybeic3mambq274fafn2o4hcb4swdzm7ntezh2zlfoa644sxfll6ifb54/1.png",
       name: "Early Bird Ticket",
       tooltipInfo: "Discounted price for early purchase"
     }
     ,
     {
-      image: "https://example.com/ticket3.png",
+      image: "https://37cab6b984fd76206e94c796d0b1a00c.ipfscdn.io/ipfs/bafybeic3mambq274fafn2o4hcb4swdzm7ntezh2zlfoa644sxfll6ifb54/1.png",
       name: "Early Bird Ticket",
       tooltipInfo: "Discounted price for early purchase"
     }
@@ -59,7 +59,7 @@ export default function EventDetailsPage({ params }: PageProps) {
   const endDate = "2025-01-26T04:00:00"
 
   return (
-    <div className="mx-auto p-6">
+    <div className="mx-auto p-[16px] md:p-[24px]">
       <div className="w-full">
         <img
           src={'https://firebasestorage.googleapis.com/v0/b/hallos-dev.appspot.com/o/EventBanner.png?alt=media&token=50b477d6-4f7a-4fb2-b155-37ab1eb5d30f'}
@@ -93,7 +93,8 @@ export default function EventDetailsPage({ params }: PageProps) {
               </div>
             </div>
           </div>
-          <div className="ml-[50px]">
+          {/* lg:block hidden */}
+          <div className="ml-[50px] ">
             <EventDetails {...eventData} />
           </div>
         </div>

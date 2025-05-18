@@ -21,7 +21,7 @@ export const ItemAccordion: FC<Props> = ({ faq, focus, onClick, isLastElement })
       <div className='flex justify-between w-full'>
         <h3 className='max-w-[88%] text-h4'>{ faq.title }</h3>
 
-        <PlusMinus isPlus={!focus} styles='min-w-4 max-h-4' />
+        <PlusMinus isPlus={!focus} styles='min-w-4 max-h-4 z-10' />
       </div>
 
       <div className={`overflow-hidden
