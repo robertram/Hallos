@@ -114,9 +114,15 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ tickets, selection, setStep
           <span className="text-white font-medium">${total.toFixed(2)}</span>
         </div>
 
-        <Button type="primary" className="w-full" onClick={() => {
-          setStep && setStep((step: number) => step + 1)
-        }}>
+        <Button
+          type="primary"
+          className="w-full"
+          onClick={() => {
+            if (setStep) {
+              setStep((step: number) => step + 1);
+            }
+          }}
+        >
           Proceed to payment
         </Button>
       </div>
