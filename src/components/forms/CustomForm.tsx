@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react';
-import Input from '../Input/Input';
-import PhoneInput from '../Input/PhoneInput';
+import Input from '../input/Input';
+import PhoneInput from '../input/PhoneInput';
 
 export interface FormField {
   id: string;

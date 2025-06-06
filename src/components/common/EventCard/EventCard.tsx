@@ -63,7 +63,9 @@ export const EventCard = ({ image, title, date, location, price, link, timezone 
           <h3 className="text-base font-bold">{title}</h3>
           {date &&
             <div className="flex items-center mt-1">
-              <Calendar />
+              <div className="w-[20px] h-[20px]">
+                <Calendar className="w-[20px] h-[20px]" />
+              </div>
               <p className="text-sm text-[#BEBEBE] mt-1 ml-1">
                 {dayOfWeek}, {day}, {month}
               </p>
@@ -72,12 +74,15 @@ export const EventCard = ({ image, title, date, location, price, link, timezone 
               <p>{month}</p> */}
             </div>
           }
-        
+
           {location &&
             <div className="flex items-center mt-1">
-              <Location />
-              <p className="text-sm text-[#BEBEBE] mt-1 ml-1">
-                {location}
+              <div className="w-[20px] h-[20px]">
+                <Location className="w-[20px] h-[20px]" />
+              </div>
+              <p className="text-sm text-[#BEBEBE] mt-1 ml-1 flex-wrap">
+                {/* {location} */}
+                asdsaasdsa asdsaasdsaasdsaasd saasdsaas dsaasdsaasdsa
               </p>
             </div>
           }
