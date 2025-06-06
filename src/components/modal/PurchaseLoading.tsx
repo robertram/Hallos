@@ -6,7 +6,7 @@ export const PurchaseLoading = () => {
 
       <figure className="flex justify-center">
         <img
-          src="/loading.png"
+          src="/images/loading.png"
           alt="Processing status"
           width={240}
           height={20}
