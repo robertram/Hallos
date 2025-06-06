@@ -81,8 +81,7 @@ export const EventCard = ({ image, title, date, location, price, link, timezone 
                 <Location className="w-[20px] h-[20px]" />
               </div>
               <p className="text-sm text-[#BEBEBE] mt-1 ml-1 flex-wrap">
-                {/* {location} */}
-                asdsaasdsa asdsaasdsaasdsaasd saasdsaas dsaasdsaasdsa
+                {location}
               </p>
             </div>
           }
