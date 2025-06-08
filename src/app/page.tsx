@@ -6,6 +6,9 @@ import { AccountTicket } from "@/components/common/AccountTicket/AccountTicket";
 import { Accordion } from "@/components/ui/Accordion/accordion";
 import { fullGridEvents } from "@/utils/events";
 import { FAQs } from "@/utils/faqs";
+import { PurchaseSuccess } from "@/components/modal/PurchaseSuccess";
+import { Modal } from "@/components/modal/Modal";
+import { PurchaseLoading } from "@/components/modal/PurchaseLoading";
 import ExampleQuery from "@/components/ExampleQuery";
 import EventsQuery from "@/components/EventsQuery";
 //oneEvent
@@ -70,14 +73,15 @@ export default function Home() {
         </div>
       </div>
 
+      <Accordion faqs={FAQs}/>
+      <Modal>
+        <PurchaseSuccess />
+      </Modal>
+      <PurchaseLoading />
+
       <Accordion faqs={FAQs} />
 
-
-
-
       {/* <ExampleQuery /> */}
-
-      
     </div>
   );
 }
