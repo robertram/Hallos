@@ -15,7 +15,7 @@ const typeClasses: Record<string, string> = {
   outline: "border border-gray-300 bg-transparent text-gray-700 text-white w-min",
   neutral: "bg-light-neutral text-light",
   light: "bg-white text-black",
-  glass: "bg-custom-gradient text-white !px-[12px] !px-[14px] !w-min border border-white border-opacity-10"
+  glass: "bg-glass-gradient3 text-white !px-[12px] !px-[14px] !w-min border border-white border-opacity-10"
 };
 
 export const Button: React.FC<ButtonProps> = ({

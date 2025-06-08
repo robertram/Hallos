@@ -9,6 +9,8 @@ import { FAQs } from "@/utils/faqs";
 import { PurchaseSuccess } from "@/components/modal/PurchaseSuccess";
 import { Modal } from "@/components/modal/Modal";
 import { PurchaseLoading } from "@/components/modal/PurchaseLoading";
+import ExampleQuery from "@/components/ExampleQuery";
+import EventsQuery from "@/components/EventsQuery";
 //oneEvent
 
 export default function Home() {
@@ -20,6 +22,7 @@ export default function Home() {
     image: "https://google.com/testimage.png", // Asegúrate de que la imagen esté disponible
     tooltipInfo: "This ticket is a digital collectible", // Tooltip agregado
   };
+
 
   return (
     <div className="flex flex-col items-center px-[15px]">
@@ -47,11 +50,11 @@ export default function Home() {
         </div>
 
         {/* Event Cards */}
-        <div className="flex flex-wrap">
+        {/* <div className="flex flex-wrap">
           {events.map((event, index) => (
             <div className="p-2" key={index}>
               <EventCard
-                date={event.date}
+                // date={event.date}
                 image={event.image}
                 location={event.location}
                 price={event.price}
@@ -60,7 +63,8 @@ export default function Home() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
+        <EventsQuery />
 
         <div className="text-center my-[70px]">
           <p className="text-button1 mb-[15px]">End of results</p>
@@ -75,6 +79,9 @@ export default function Home() {
       </Modal>
       <PurchaseLoading />
 
+      <Accordion faqs={FAQs} />
+
+      {/* <ExampleQuery /> */}
     </div>
   );
 }

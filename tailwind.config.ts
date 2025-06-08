@@ -76,7 +76,7 @@ export default {
   			'primary-gradient': 'linear-gradient(to right, #1A82FE, #A14BFC)',
   			'glass-gradient': 'linear-gradient(to top, #D9D9D90F, #D9D9D900)',
 			'glass-gradient2': 'linear-gradient(180deg, rgba(217, 217, 217, 0.0588) 0%, rgba(217, 217, 217, 0) 100%)',
-  			'custom-gradient': 'linear-gradient(180deg, rgba(217, 217, 217, 0.06) 0%, rgba(217, 217, 217, 0.00) 125.86%)',
+  			'glass-gradient3': 'linear-gradient(180deg, rgba(217, 217, 217, 0.06) 0%, rgba(217, 217, 217, 0.00) 125.86%)',
   		},
   		fontFamily: {
   			geist: [
