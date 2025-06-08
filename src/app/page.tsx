@@ -23,7 +23,6 @@ export default function Home() {
     tooltipInfo: "This ticket is a digital collectible", // Tooltip agregado
   };
 
-
   return (
     <div className="flex flex-col items-center px-[15px]">
 
@@ -74,14 +73,6 @@ export default function Home() {
       </div>
 
       <Accordion faqs={FAQs}/>
-      <Modal>
-        <PurchaseSuccess />
-      </Modal>
-      <PurchaseLoading />
-
-      <Accordion faqs={FAQs} />
-
-      {/* <ExampleQuery /> */}
     </div>
   );
 }

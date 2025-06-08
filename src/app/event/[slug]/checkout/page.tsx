@@ -1,10 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { tickets } from "@/constants/checkout";
 import CheckoutTicket from "@/components/checkout/CheckoutTicket";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import PaymentMethod from "@/components/PaymentMethod";
 import { EventTitleDate } from "@/components/common/EventTitleDate/EventTitleDate";
+import { CustomModal } from "@/components/modal/CustomModal";
+import { PurchaseLoading } from "@/components/modal/PurchaseLoading";
+import { PurchaseSuccess } from "@/components/modal/PurchaseSuccess";
 
 export default function CheckoutPage() {
   const [ticketSelection, setTicketSelection] = useState<{
@@ -15,7 +18,20 @@ export default function CheckoutPage() {
     "3": 0,
   });
 
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (step === 3) {
+      setIsLoading(true);
+      setShowModal(true);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [step]);
 
   const handleIncrement = (ticketId: string) => {
     setTicketSelection((prev) => ({
@@ -70,6 +86,10 @@ export default function CheckoutPage() {
         </div>
         <OrderSummary tickets={tickets} selection={ticketSelection} setStep={setStep} />
       </div>
+
+      <CustomModal open={showModal} onOpenChange={setShowModal}>
+        {isLoading ? <PurchaseLoading /> : <PurchaseSuccess />}
+      </CustomModal>
     </div>
   );
 }
