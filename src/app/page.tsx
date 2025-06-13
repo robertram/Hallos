@@ -11,6 +11,7 @@ import { Modal } from "@/components/modal/Modal";
 import { PurchaseLoading } from "@/components/modal/PurchaseLoading";
 import ExampleQuery from "@/components/ExampleQuery";
 import EventsQuery from "@/components/EventsQuery";
+import { CustomCheckbox } from "@/components/ui/checkbox/CustomCheckbox";
 //oneEvent
 
 export default function Home() {
@@ -73,6 +74,7 @@ export default function Home() {
       </div>
 
       <Accordion faqs={FAQs}/>
+      <CustomCheckbox />
     </div>
   );
 }
